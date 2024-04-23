@@ -1,0 +1,51 @@
+@font-face {
+	font-family: 'Actay';
+	src: 	url('../vendor/actay/ActayCondensed-Thin.woff2') format('woff2'), 
+			url('../vendor/actay/ActayCondensed-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Actay';
+	src: 	url('../vendor/actay/ActayCondensed-ThinItalic.woff2') format('woff2'),
+			url('../vendor/actay/ActayCondensed-ThinItalic.woff') format('woff');
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Actay';
+	src: 	url('../vendor/actay/Actay-Regular.woff2') format('woff2'),
+			url('../vendor/actay/Actay-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Actay';
+	src: 	url('../vendor/actay/Actay-RegularItalic.woff2') format('woff2'),
+			url('../vendor/actay/Actay-RegularItalic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Actay';
+	src: 	url('../vendor/actay/ActayWide-Bold.woff2') format('woff2'),
+			url('../vendor/actay/ActayWide-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Actay';
+	src: 	url('../vendor/actay/ActayWide-BoldItalic.woff2') format('woff2'),
+			url('../vendor/actay/ActayWide-BoldItalic.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+
+

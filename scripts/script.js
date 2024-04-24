@@ -1,125 +1,105 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.intro__main-block', {
   // Optional parameters
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: '.intro__main-block .swiper-pagination',
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.intro__main-block .swiper-button-next',
+    prevEl: '.intro__main-block .swiper-button-prev',
   },
 });
 
 
-$(document).ready(function(){
-   $(".owl-carousel").owlCarousel({
-      items: 3,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: true
-   });
+function sliderAnimate(index) {
+  let buttonsCount = $('.levels__list-item').length - 1;
+  $('.levels__line-front').animate({
+    width: 100 / buttonsCount * index + "%"
+  });
+}
+
+
+const levelSwiper = new Swiper('.levels__main-block', {
+  // Optional parameters
+  spaceBetween: 300,
+
+  // If we need pagination
+  pagination: {
+    el: '.levels__main-block .swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.levels__main-block .swiper-button-next',
+    prevEl: '.levels__main-block .swiper-button-prev',
+  }
 });
 
-// ---------------АККОРДЕОН
-// new ItcAccordion(document.querySelector('.accordion'), {
-//    alwaysOpen: true
-//  });
+levelSwiper.on('slideChangeTransitionStart', function() {
+  $('.levels__description-block').each(function(index){
+    if ($('.levels__description-block').eq(index).hasClass('swiper-slide-active')) {
+      $('.levels__list-item').removeClass('active')
+      $('.levels__list-item').eq(index).addClass('active')
+      sliderAnimate(index)
+    }
+  })
 
-//  class ItcAccordion {
-//    constructor(target, config) {
-//      this._el = typeof target === 'string' ? document.querySelector(target) : target;
-//      const defaultConfig = {
-//        alwaysOpen: true,
-//        duration: 350
-//      };
-//      this._config = Object.assign(defaultConfig, config);
-//      this.addEventListener();
-//    }
-//    addEventListener() {
-//      this._el.addEventListener('click', (e) => {
-//        const elHeader = e.target.closest('.accordion__header');
-//        if (!elHeader) {
-//          return;
-//        }
-//        if (!this._config.alwaysOpen) {
-//          const elOpenItem = this._el.querySelector('.accordion__item_show');
-//          if (elOpenItem) {
-//            elOpenItem !== elHeader.parentElement ? this.toggle(elOpenItem) : null;
-//          }
-//        }
-//        this.toggle(elHeader.parentElement);
-//      });
-//    }
-//    show(el) {
-//      const elBody = el.querySelector('.accordion__body');
-//      if (elBody.classList.contains('collapsing') || el.classList.contains('accordion__item_show')) {
-//        return;
-//      }
-//      elBody.style['display'] = 'block';
-//      const height = elBody.offsetHeight;
-//      elBody.style['height'] = 0;
-//      elBody.style['overflow'] = 'hidden';
-//      elBody.style['transition'] = `height ${this._config.duration}ms ease`;
-//      elBody.classList.add('collapsing');
-//      el.classList.add('accordion__item_slidedown');
-//      elBody.offsetHeight;
-//      elBody.style['height'] = `${height}px`;
-//      window.setTimeout(() => {
-//        elBody.classList.remove('collapsing');
-//        el.classList.remove('accordion__item_slidedown');
-//        elBody.classList.add('collapse');
-//        el.classList.add('accordion__item_show');
-//        elBody.style['display'] = '';
-//        elBody.style['height'] = '';
-//        elBody.style['transition'] = '';
-//        elBody.style['overflow'] = '';
-//      }, this._config.duration);
-//    }
-//    hide(el) {
-//      const elBody = el.querySelector('.accordion__body');
-//      if (elBody.classList.contains('collapsing') || !el.classList.contains('accordion__item_show')) {
-//        return;
-//      }
-//      elBody.style['height'] = `${elBody.offsetHeight}px`;
-//      elBody.offsetHeight;
-//      elBody.style['display'] = 'block';
-//      elBody.style['height'] = 0;
-//      elBody.style['overflow'] = 'hidden';
-//      elBody.style['transition'] = `height ${this._config.duration}ms ease`;
-//      elBody.classList.remove('collapse');
-//      el.classList.remove('accordion__item_show');
-//      elBody.classList.add('collapsing');
-//      window.setTimeout(() => {
-//        elBody.classList.remove('collapsing');
-//        elBody.classList.add('collapse');
-//        elBody.style['display'] = '';
-//        elBody.style['height'] = '';
-//        elBody.style['transition'] = '';
-//        elBody.style['overflow'] = '';
-//      }, this._config.duration);
-//    }
-//    toggle(el) {
-//      el.classList.contains('accordion__item_show') ? this.hide(el) : this.show(el);
-//    }
-//  }
-
-// ------- Слайдер "Уровни"
+})
 
 
 
-// $(document).ready(function(){
-//    $(".owl-carousel-intro").owlCarousel({
-//       items: 1,
-//       loop: true,
-//       margin: 10,
-//       autoplay: true,
-//       autoplayTimeout: 4000,
-//       autoplayHoverPause: true
-//    });
-// });
+
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    items: 3,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true
+  });
+});
+
+$('.accordeon__header').click(function() {
+  if ($(this).closest('.accordeon__item').hasClass('active')) {
+    $(this).closest('.accordeon').find('.accordeon__body').slideUp(300);
+    $(this).closest('.accordeon__item').removeClass('active');
+  } else {
+    $('.accordeon__header').closest('.accordeon').find('.accordeon__body').slideUp(300);
+    $('.accordeon__header').closest('.accordeon__item').removeClass('active');
+    
+    $(this).closest('.accordeon').find('.accordeon__body').slideDown(300);
+    $(this).closest('.accordeon__item').addClass('active');
+  }
+});
+
+$('.button-animated').hover(function() {
+  $(this).find('.button-animated-image').fadeToggle(300);
+  $(this).toggleClass('active');
+  if (!$(this).hasClass('active')) {
+    $(this).find('.button-animated-text').animate({
+      textAlign: 'center',
+      flexGrow: 1,
+    });
+  } else {
+    $(this).find('.button-animated-text').animate({
+      textAlign: 'left',
+      flexGrow: 0,
+    });
+  }
+});
+
+$('.levels__list-item').each(function(index) {
+    $(this).click(function() {
+    levelSwiper.slideTo(index);
+    $('.levels__list-item').removeClass('active');
+    $(this).addClass('active');
+    sliderAnimate(index)
+  });
+});
+
+

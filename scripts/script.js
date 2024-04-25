@@ -55,7 +55,7 @@ levelSwiper.on('slideChangeTransitionStart', function() {
 
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
-    items: 3,
+    items: 1,
     loop: true,
     margin: 10,
     autoplay: true,
@@ -102,4 +102,15 @@ $('.levels__list-item').each(function(index) {
   });
 });
 
+$('.tariffs__buttom-show-all').click(function() {
+  if ($(this).hasClass('active')) {
+    $(this).closest('.tariffs__block').find('.tariffs__block-show-all').slideUp(300);
+    $(this).removeClass('active')
+  } else {
+    $('.tariffs__buttom-show-all').closest('.tariffs__block').find('.tariffs__block-show-all').slideUp(300);
+    $('.tariffs__buttom-show-all').removeClass('active')
 
+    $(this).closest('.tariffs__block').find('.tariffs__block-show-all').slideDown(300);
+    $(this).addClass('active')
+  }
+});

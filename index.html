@@ -19,13 +19,15 @@
          <div class="header__block">
             <div class="header__block-logo-nav">
                <img src="./images/logo.svg" alt="Логотип" class="header__logo">
-               <ul class="header__navigation-list">
-                  <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">О проекте</a></li>
-                  <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Тарифы</a></li>
-                  <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Преимущества</a></li>
-                  <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Для кого</a></li>
-                  <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Вопросы</a></li>
-               </ul>
+               <div class="header__navigation-list-block">
+                  <ul class="header__navigation-list">
+                     <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">О проекте</a></li>
+                     <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Тарифы</a></li>
+                     <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Преимущества</a></li>
+                     <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Для кого</a></li>
+                     <li class="header__navigation-list-item"><a href="#" class="header__navigation-link">Вопросы</a></li>
+                  </ul>
+               </div>
             </div>
             <div class="header__buttons-block">
                <button class="header__button">Перейти в бота</button>
@@ -130,7 +132,7 @@
          <section class="description">
             
             <div class="container">
-               <img src="./images/Vector-btn-l.svg" alt="" class="background-image-descr">
+               <img src="./images/Vector-btn-l.svg" alt="Фоновая картинка" class="background-image-descr">
                <h2 class="subtitle subtitle__description">О проекте</h2>
                <div class="description__text-block">
                   <img src="./images/Drawkit-Illustrations-Education-1-10-4.png" alt="Картинка мама с дочкой"
@@ -156,203 +158,111 @@
 
          <section class="tariffs">
             <div class="container">
-            <h2 class="subtitle">Тарифы</h2>
+               <h2 class="subtitle">Тарифы</h2>
 
-            <img src="./images/tariffs-image-left.svg" alt="Картинка" class="background-image-descr background-image-tariffs-left">
-            <img src="./images/tariffs-image-right.svg" alt="Картинка" class="background-image-descr background-image-tariffs-right">
-            
-            <div class="tariffs-blocks-elements">
-               <div class="tariffs__block free">
-                  <img src="./images/tariffs-free.png" alt="Картинка Лайк" class="tariffs__image">
-                  <h2 class="tariffs__title">FREE</h2>
-                  <h3 class="tariffs__subtitle">Бесплатно</h3>
-                  <ul class="tariffs__list">
-                     <li class="tariffs__list-item"><span><span class="tariffs__subtitle-bold">3</span> карточки в день</span><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <li class="tariffs__list-item">Транскрипция слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <li class="tariffs__list-item">Аудиопроизношение<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <div class="tariffs__block-show-all">
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Повторение по мнемонике<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Примеры использования слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах GOLD<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Приглашение 1 друга в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">«Гордость семьи»<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Сертификат после прохождения уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Значок уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+               <img src="./images/tariffs-image-left.svg" alt="Картинка" class="background-image-descr background-image-tariffs-left">
+               <img src="./images/tariffs-image-right.svg" alt="Картинка" class="background-image-descr background-image-tariffs-right">
+               
+               <div class="swiper tariffs__slider">
+                  <div class="swiper-wrapper tariffs-blocks-elements">
+                     <div class="swiper-slide tariffs__block free">
+                        <img src="./images/tariffs-free.png" alt="Картинка Лайк" class="tariffs__image">
+                        <h2 class="tariffs__title">FREE</h2>
+                        <h3 class="tariffs__subtitle">Бесплатно</h3>
+                        <ul class="tariffs__list">
+                           <li class="tariffs__list-item"><span><span class="tariffs__subtitle-bold">3</span> карточки в день</span><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <li class="tariffs__list-item">Транскрипция слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <li class="tariffs__list-item">Аудиопроизношение<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <div class="tariffs__block-show-all">
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Повторение по мнемонике<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Примеры использования слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах GOLD<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Приглашение 1 друга в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">«Гордость семьи»<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Сертификат после прохождения уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Значок уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           </div>
+                        </ul>
+                        <button type="button" class="tariffs__buttom-show-all">
+                           <p class="tariffs__button-text-show">Смотреть все</p>
+                           <img src="./images/button-show-all.svg" alt="Кнопка показать все" class="tariffs__button-image-show">
+                        </button>
+                        <button type="button" class="tariffs__button-goto button-animated">
+                           <p class="tariffs__button-text button-animated-text">Перейти в бота</p>
+                           <img src="./images/Group-37058-descr.png" alt="Картинка стрелочки" class="tariffs__button-image button-animated-image">
+                        </button>
                      </div>
-                  </ul>
-                  <button type="button" class="tariffs__buttom-show-all">
-                     <p class="tariffs__button-text-show">Смотреть все</p>
-                     <img src="./images/button-show-all.svg" alt="Кнопка показать все" class="tariffs__button-image-show">
-                  </button>
-                  <button type="button" class="tariffs__button-goto button-animated">
-                     <p class="tariffs__button-text button-animated-text">Перейти в бота</p>
-                     <img src="./images/Group-37058-descr.png" alt="Картинка стрелочки" class="tariffs__button-image button-animated-image">
-                  </button>
-               </div>
 
-               <div class="tariffs__block premium">
-                  <img src="./images/crown.png" alt="Картинка Лайк" class="tariffs__image">
-                  <h2 class="tariffs__title">PREMIUM</h2>
-                  <h3 class="tariffs__subtitle tariffs__subtitle-premium"><span class="tariffs__subtitle-bold">19 900 сўм</span> в месяц</h3>
-                  <ul class="tariffs__list">
-                     <li class="tariffs__list-item">10 карточек в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <li class="tariffs__list-item">Транскрипция слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <li class="tariffs__list-item">Аудиопроизношение<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <div class="tariffs__block-show-all">
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Повторение по мнемонике<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Примеры использования слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах GOLD<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Приглашение 1 друга в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">«Гордость семьи»<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Сертификат после прохождения уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Значок уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                     <div class="swiper-slide tariffs__block premium">
+                        <img src="./images/crown.png" alt="Картинка Лайк" class="tariffs__image">
+                        <h2 class="tariffs__title">PREMIUM</h2>
+                        <h3 class="tariffs__subtitle tariffs__subtitle-premium"><span class="tariffs__subtitle-bold">19 900 сўм</span> в месяц</h3>
+                        <ul class="tariffs__list">
+                           <li class="tariffs__list-item">10 карточек в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <li class="tariffs__list-item">Транскрипция слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <li class="tariffs__list-item">Аудиопроизношение<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <div class="tariffs__block-show-all">
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Повторение по мнемонике<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Примеры использования слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах GOLD<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Приглашение 1 друга в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">«Гордость семьи»<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Сертификат после прохождения уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Значок уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           </div>
+                        </ul>
+                        <button type="button" class="tariffs__buttom-show-all tariffs__buttom-show-all-premium">
+                           <p class="tariffs__button-text-show tariffs__button-text-premium">Смотреть все</p>
+                           <img src="./images/ooui_next-down.svg" alt="Кнопка показать все" class="tariffs__button-image-show">
+                        </button>
+
+                        <button type="button" class="tariffs__button-goto tariffs__button-goto-premium button-animated">
+                           <p class="tariffs__button-text tariffs__button-text-premium button-animated-text">Перейти в бота</p>
+                           <img src="./images/Group-37058-descr.png" alt="Картинка стрелочки" class="tariffs__button-image button-animated-image">
+                        </button>
                      </div>
-                  </ul>
-                  <button type="button" class="tariffs__buttom-show-all tariffs__buttom-show-all-premium">
-                     <p class="tariffs__button-text-show tariffs__button-text-premium">Смотреть все</p>
-                     <img src="./images/ooui_next-down.svg" alt="Кнопка показать все" class="tariffs__button-image-show">
-                  </button>
 
-                  <button type="button" class="tariffs__button-goto tariffs__button-goto-premium button-animated">
-                     <p class="tariffs__button-text tariffs__button-text-premium button-animated-text">Перейти в бота</p>
-                     <img src="./images/Group-37058-descr.png" alt="Картинка стрелочки" class="tariffs__button-image button-animated-image">
-                  </button>
-               </div>
+                     <div class="swiper-slide tariffs__block">
+                        <img src="./images/like-standart.png" alt="Картинка Лайк" class="tariffs__image">
+                        <h2 class="tariffs__title">STANDART</h2>
+                        <h3 class="tariffs__subtitle"><span class="tariffs__subtitle-bold">9 900 сўм</span> в месяц</h3>
+                        <ul class="tariffs__list">
+                           <li class="tariffs__list-item">7 карточки в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <li class="tariffs__list-item">Транскрипция слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <li class="tariffs__list-item">Аудиопроизношение<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           <div class="tariffs__block-show-all">
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Повторение по мнемонике<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Примеры использования слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах GOLD<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Приглашение 1 друга в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">«Гордость семьи»<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Сертификат после прохождения уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                              <li class="tariffs__list-item tariffs__list-item-full-card">Значок уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                           </div>
+                        </ul>
+                        <button type="button" class="tariffs__buttom-show-all">
+                           <p class="tariffs__button-text-show">Смотреть все</p>
+                           <img src="./images/button-show-all.svg" alt="Кнопка показать все" class="tariffs__button-image-show">
+                        </button>
 
-               <div class="tariffs__block">
-                  <img src="./images/like-standart.png" alt="Картинка Лайк" class="tariffs__image">
-                  <h2 class="tariffs__title">STANDART</h2>
-                  <h3 class="tariffs__subtitle"><span class="tariffs__subtitle-bold">9 900 сўм</span> в месяц</h3>
-                  <ul class="tariffs__list">
-                     <li class="tariffs__list-item">7 карточки в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <li class="tariffs__list-item">Транскрипция слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <li class="tariffs__list-item">Аудиопроизношение<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     <div class="tariffs__block-show-all">
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Повторение по мнемонике<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Примеры использования слова<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Участие в конкурсах GOLD<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Приглашение 1 друга в день<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">«Гордость семьи»<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Сертификат после прохождения уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Значок уровня<img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
+                        <button type="button" class="tariffs__button-goto button-animated">
+                           <p class="tariffs__button-text button-animated-text">Перейти в бота</p>
+                           <img src="./images/Group-37058-descr.png" alt="Картинка стрелочки" class="tariffs__button-image button-animated-image">
+                        </button>
                      </div>
-                  </ul>
-                  <button type="button" class="tariffs__buttom-show-all">
-                     <p class="tariffs__button-text-show">Смотреть все</p>
-                     <img src="./images/button-show-all.svg" alt="Кнопка показать все" class="tariffs__button-image-show">
-                  </button>
+                  </div>
 
-                  <button type="button" class="tariffs__button-goto button-animated">
-                     <p class="tariffs__button-text button-animated-text">Перейти в бота</p>
-                     <img src="./images/Group-37058-descr.png" alt="Картинка стрелочки" class="tariffs__button-image button-animated-image">
-                  </button>
+                  <div class="container">
+                     <button type="button" class="swiper-button-prev tariffs__button_left intro__button_left"></button>
+                     <button type="button" class="swiper-button-next tariffs__button_right intro__button_right"></button>
+                  </div>
+
+                  <div class="swiper-pagination"></div>
                </div>
             </div>
-
-
-            <!-- -------- Карточки в развернутом формате -------- -->
-            <!-- <div class="tariffs-blocks-elements full-card">
-               <div class="tariffs__block free tariffs__block-full-card">
-                  <img src="./images/tariffs-free.png" alt="Картинка Лайк" class="tariffs__image">
-                  <h2 class="tariffs__title">FREE</h2>
-                  <h3 class="tariffs__subtitle">Бесплатно</h3>
-                  <div class="tariffs__block-list tariffs__block-list-full-card">
-                     <ul class="tariffs__list tariffs__list-full-card">
-                        <li class="tariffs__list-item tariffs__list-item-full-card">3 карточки в день</li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Транскрипция слова</li>
-                        <li class="tariffs__list-item tariffs__list-item-full-card">Аудиопроизношение</li>
-                        
-                     </ul>
-                     <ul class="tariffs__list-check">
-                        <li class="tariffs__list-item-check tariffs__list-item-check-full-card"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check tariffs__list-item-check-full-card"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check tariffs__list-item-check-full-card"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        
-                     </ul>
-                  </div>
-                  <button type="button" class="tariffs__buttom-show-all">
-                     <p class="tariffs__button-text">Показать все</p>
-                     <img src="./images/button-show-all.svg" alt="Кнопка показать все" class="tariffs__button-image">
-                  </button>
-                  <button type="button" class="tariffs__button-goto">Перейти в бота</button>
-               </div>
-
-               <div class="tariffs__block premium tariffs__block-full-card">
-                  <img src="./images/crown.png" alt="Картинка Лайк" class="tariffs__image">
-                  <h2 class="tariffs__title">PREMIUM</h2>
-                  <h3 class="tariffs__subtitle tariffs__subtitle-premium"><span class="tariffs__subtitle-bold">19 900 сўм</span> в месяц</h3>
-                  <div class="tariffs__block-list">
-                     <ul class="tariffs__list">
-                        <li class="tariffs__list-item">10 карточек в день</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Аудиопроизношение</li>
-                     </ul>
-                     <ul class="tariffs__list-check">
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        
-                     </ul>
-                  </div>
-                  <button type="button" class="tariffs__buttom-show-all tariffs__buttom-show-all-premium">
-                     <p class="tariffs__button-text tariffs__button-text-premium">Показать все</p>
-                     <img src="./images/ooui_next-down.svg" alt="Кнопка показать все" class="tariffs__button-image">
-                  </button>
-                  <button type="button" class="tariffs__button-goto tariffs__button-goto-premium">Перейти в бота</button>
-               </div>
-
-               <div class="tariffs__block standart tariffs__block-full-card">
-                  <img src="./images/like-standart.png" alt="Картинка Лайк" class="tariffs__image">
-                  <h2 class="tariffs__title">STANDART</h2>
-                  <h3 class="tariffs__subtitle"><span class="tariffs__subtitle-bold">9 900 сўм</span> в месяц</h3>
-                  <div class="tariffs__block-list">
-                     <ul class="tariffs__list">
-                        <li class="tariffs__list-item">7 карточки в день</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Транскрипция слова</li>
-                        <li class="tariffs__list-item">Аудиопроизношение</li>
-                     </ul>
-                     <ul class="tariffs__list-check">
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                        <li class="tariffs__list-item-check"><img src="./images/check-mark.png" alt="Галочка" class="tariffs__list-item-check-image"></li>
-                     </ul>
-                  </div>
-                  <button type="button" class="tariffs__buttom-show-all">
-                     <p class="tariffs__button-text">Показать все</p>
-                     <img src="./images/button-show-all.svg" alt="Кнопка показать все" class="tariffs__button-image">
-                  </button>
-                  <button type="button" class="tariffs__button-goto">Перейти в бота</button>
-               </div>
-            </div> -->
-         </div>
          </section>
 
          <section class="banner">
@@ -431,6 +341,7 @@
                               <button class="levels__button">Перейти в бота</button>
                            </div>
                            <img src="./images/levels-kids-image.png" alt="Уровни" class="levels__background-image">
+                           <img src="./images/levels-image-background-kids.png" alt="Фоновая картинка" class="levels__background-image-inner-elem">
                         </div>
                      </div>
                      
@@ -444,6 +355,7 @@
                               <button class="levels__button">Перейти в бота</button>
                            </div>
                            <img src="./images/Vector_19.png" alt="Уровни" class="levels__background-image">
+                           <img src="./images/levels-image-background-beginner.png" alt="Фоновая картинка" class="levels__background-image-inner-elem">
                         </div>
                      </div>
 
@@ -456,6 +368,7 @@
                               <button class="levels__button">Перейти в бота</button>
                            </div>
                            <img src="./images/levels-beginer-image.png" alt="Уровни" class="levels__background-image">
+                           <img src="./images/levels-image-background-start.png" alt="Фоновая картинка" class="levels__background-image-inner-elem">
                         </div>
                      </div>
                      
@@ -468,6 +381,7 @@
                               <button class="levels__button">Перейти в бота</button>
                            </div>
                            <img src="./images/levels-middle-image.png" alt="Уровни" class="levels__background-image">
+                           <img src="./images/levels-image-background-middle.png" alt="Фоновая картинка" class="levels__background-image-inner-elem">
                         </div>
                      </div>
                   </div>
@@ -592,13 +506,22 @@
                   <a href="#" class="footer__logo"></a>
                   <button class="footer__button">Перейти в бота</button>
                </div>
-               <ul class="footer__list">
-                  <li class="footer__list-item"><a href="#" class="footer__list-item-link">О проекте</a></li>
-                  <li class="footer__list-item"><a href="#" class="footer__list-item-link">Тарифы</a></li>
-                  <li class="footer__list-item"><a href="#" class="footer__list-item-link">Преимущества</a></li>
-                  <li class="footer__list-item"><a href="#" class="footer__list-item-link">Для кого</a></li>
-                  <li class="footer__list-item"><a href="#" class="footer__list-item-link">Вопросы</a></li>
-               </ul>
+               <div class="footer__list-lang">
+                  <ul class="footer__list">
+                     <li class="footer__list-item"><a href="#" class="footer__list-item-link">О проекте</a></li>
+                     <li class="footer__list-item"><a href="#" class="footer__list-item-link">Тарифы</a></li>
+                     <li class="footer__list-item"><a href="#" class="footer__list-item-link">Преимущества</a></li>
+                     <li class="footer__list-item"><a href="#" class="footer__list-item-link">Для кого</a></li>
+                     <li class="footer__list-item"><a href="#" class="footer__list-item-link">Вопросы</a></li>
+                  </ul>
+
+                  <div class="footer__buttons-blocks-flag-list">
+                     <button class="footer__button-lang">
+                        <img src="./images/emojione_flag-for-uzbekistan.svg" alt="Флаг Узбекистана" class="footer__button-image">
+                        <p class="footer__batton-text">UZ</p>
+                     </button>
+                  </div>
+               </div>
             </div>
 
             <div class="line"></div>

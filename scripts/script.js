@@ -1,3 +1,9 @@
+$(document).ready(function() {
+  $('.burger').click(function() {
+      $('.header__navigation-list-block').slideToggle();
+  });
+});
+
 const swiper = new Swiper('.intro__main-block', {
   // Optional parameters
   loop: true,
@@ -14,6 +20,22 @@ const swiper = new Swiper('.intro__main-block', {
   },
 });
 
+const tariffsSwiper = new Swiper('.tariffs__slider', {
+  // Optional parameters
+  // loop: true,
+  slidesPerView: 1,
+
+  // If we need pagination
+  pagination: {
+    el: '.tariffs__slider .swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.tariffs__slider .swiper-button-next',
+    prevEl: '.tariffs__slider .swiper-button-prev',
+  },
+});
 
 function sliderAnimate(index) {
   let buttonsCount = $('.levels__list-item').length - 1;
@@ -47,8 +69,7 @@ levelSwiper.on('slideChangeTransitionStart', function() {
       sliderAnimate(index)
     }
   })
-
-})
+});
 
 
 

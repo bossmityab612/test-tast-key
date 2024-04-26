@@ -176,7 +176,10 @@ body {
     }
 }
 
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
+    .header__buttons-blocks-flag {
+        font-size: 14px;
+    }
 
     .header__navigation-list-block {
         display: none;
@@ -187,16 +190,19 @@ body {
         min-height: 216px;
         border-radius: 0 0 0 15px;
         position: absolute;
+        padding: 25px 0 26px 15px;
         right: -20px;
         top: 79px;
         z-index: 2;
         background-color: #fff;
         display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .header__navigation-list-item {
         margin: 0;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .header__button {
@@ -204,13 +210,27 @@ body {
     }
 
     .header__buttons-block {
-        justify-content: flex-end;
-    }    
+        margin: 0;
+        max-width: 127px;
+        width: 100%;
+    }
+    
+    .header__lang {
+        font-size: 14px;
+    }
+
+    .header__buttons-blocks-flag {
+        max-width: 71px;
+    }
     
     .burger {
-        margin-left: 21px;
-        width: 29px;
-        height: 21px;
+        display: flex;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .burger__block {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -228,6 +248,18 @@ body {
     .burger__lines_last {
         width: 20px;
     }
+
+    .burger.active {
+        background-color: #00A1DC;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .burger__lines.active {
+        background-color: #fff;
+    }
+
 }
 
 @media screen and (max-width: 834px) {
@@ -235,11 +267,20 @@ body {
         width: 100%;
         margin: 0 auto;
     }
+
+    .header__navigation-list {
+        right: -20px;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 390px) {
     .header {
         max-width: 350px;
+    }
+
+    .header__navigation-list {
+        right: -40px;
     }
 }
 

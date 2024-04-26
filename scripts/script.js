@@ -1,6 +1,9 @@
 $(document).ready(function() {
-  $('.burger').click(function() {
+  $(document).ready(function() {
+    $('.burger').click(function() {
+      $('.burger, .burger__lines').toggleClass('active');
       $('.header__navigation-list-block').slideToggle();
+    });
   });
 });
 
@@ -70,9 +73,6 @@ levelSwiper.on('slideChangeTransitionStart', function() {
     }
   })
 });
-
-
-
 
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({

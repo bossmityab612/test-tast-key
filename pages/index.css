@@ -555,10 +555,6 @@ body {
     font-size: 27px;
 }
 
-/* .footer__connection-mess-block {
-    border: 1px solid #000;
-} */
-
 .footer__connection-mess-block li {
     margin: 0;
     padding: 0;
@@ -572,6 +568,56 @@ body {
     max-height: 64px;
     height: 100%;
     width: 100%;
+}
+
+.footer__block-navigation {
+    border: 1px solid #000;
+    min-height: 203px;
+    height: 100%;
+    display: flex;
+    margin: 32px 0 0 0;
+}
+
+.footer__block-navigation-list {
+    border: 1px solid red;
+    max-width: 744px;
+    min-height: 141px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__block-navigation-list h3 {
+    font-size: 32px;
+    font-weight: 100;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.footer__block-navigation-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: auto;
+    height: 100%;
+}
+
+.footer__block-navigation-list li {
+    background-color: transparent;
+    border: 1px solid green;
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+    border-radius: 0%;
+
+
+}
+
+.footer__block-navigation-list a {
+    text-decoration: none;
+    color: #F5E5D5;
 }
 
 /* --------- /Подвал ------- */

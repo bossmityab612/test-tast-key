@@ -5,7 +5,6 @@
     font-display: swap;
     src: url('../vendor/inter/Inter-Medium.woff2') format('woff2'),
          url('../vendor/inter/Inter-Medium.woff') format('woff');
-
 }
 
 @font-face {

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *{
-    /* outline: 1px solid green; */
+    outline: 1px solid green;
     box-sizing: border-box;
 }
 
@@ -133,18 +133,24 @@ body {
 /* ---------- Блок Интро ----------- */
 
 .intro {
+    background-image: url('../images/intro-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 50px 50px;
+}
+
+.intro .container {
     min-height: 793px;
     width: 100%;
-    background-image: url('../images/intro-background.jpg');
-    border-radius: 0 0 50px 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .intro__header-block {
     padding-top: 100px;
-    margin-left: 200px; 
+    margin: 0 0 97px 0; 
     max-width: 1131px;
     min-height: 443px;
     width: 100%;
@@ -186,6 +192,7 @@ body {
     justify-content: space-between;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .intro__target-audience-list li {
@@ -344,7 +351,7 @@ body {
     margin: auto 0;
 }
 
-.strategy__block-stages-text-btn ol {
+.strategy__block-stages-text-btn ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -353,16 +360,9 @@ body {
     height: 100%;
     color: #F5E5D5;
     border: 1px solid #000;
-    /* list-style-position: inside; */
+    list-style-position: inside;
+    list-style: none;
     padding: 0;
-}
-
-.strategy__block-stages-text-btn li {
-    font-weight: bold;
-}
-
-.strategy__block-stages-text-btn li:nth-last-child {
-    font-weight: 100;
 }
 
 .strategy__block-stages-text-btn button {
@@ -648,12 +648,9 @@ body {
     background-color: transparent;
     border: 1px solid green;
     width: 100%;
-
     padding: 0;
     margin: 0;
     border-radius: 0%;
-
-
 }
 
 .footer__block-navigation-list a {
@@ -661,4 +658,49 @@ body {
     color: #F5E5D5;
 }
 
+.footer__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #F5E5D5;
+    margin: 32px 0 0 0;
+    padding-top: 32px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer__bottom p {
+    padding: 0;
+    margin: 0;
+}
+
 /* --------- /Подвал ------- */
+
+/* @media screen and (max-width: 390px) {
+    .intro__header-block {
+        max-width: 970px;
+    }
+} */
+
+@media screen and (max-width: 1220px) {
+    /* ------ Блок Интро ------ */
+    .intro__header-block {
+        max-width: 970px;
+    }
+
+    .intro__header-block h1 {
+        font-size: 50px;
+
+    }
+    /* ------ /Блок Интро ------ */
+
+    /* ------- Блок Стратегия ------- */
+    .strategy__block-stages {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* ------- /Блок Стратегия ------- */
+
+}

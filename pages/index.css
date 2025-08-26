@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *{
-    /* outline: 1px solid green; */
+    outline: 1px solid green;
     box-sizing: border-box;
 }
 
@@ -34,6 +34,10 @@ body {
 
 h1, h2 {
     font-family: 'Poiret One', Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	font-size: 42px;
 }
 
 /* ------- Блок ХЕДЕР ------ */
@@ -188,6 +192,14 @@ h1, h2 {
 
 /* -------- /Блок ХЕДЕР -------- */
 
+/* -------- Бургер ------- */
+
+.burger {
+	display: none;
+}
+
+/* -------- /Бургер ------- */
+
 /* ---------- Блок Интро ----------- */
 
 .intro {
@@ -214,7 +226,7 @@ h1, h2 {
     width: 100%;
 }
 
-.intro__header-block h1 {
+h1 {
     font-size: 64px;
     font-weight: 100;
     margin: 0 0 16px 0;
@@ -313,9 +325,9 @@ h1, h2 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: start;
-    object-fit: contain;
     background-repeat: no-repeat;
     background-size: cover;
+	background-position: center;
     color: #F5E5D5;
     font-size: 24px;
     padding: 0 16px 16px 16px;
@@ -385,7 +397,6 @@ h1, h2 {
 
 .strategy h2 {
     font-weight: 100;
-    font-size: 46px;
     margin: 0;
     padding-top: 64px;
     font-family: 'Poiret One', Arial, Helvetica, sans-serif;
@@ -395,7 +406,7 @@ h1, h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 48px 0 64px;
+    padding: 48px 0 64px;
 }
 
 .strategy__block-stages-text-btn {
@@ -450,7 +461,6 @@ h1, h2 {
 }
 
 .object-model__block h2 {
-    font-size: 46px;
     font-weight: 100;
 }
 
@@ -592,7 +602,6 @@ h1, h2 {
 }
 
 .footer__block h2 {
-    font-size: 64px;
     font-weight: 100;
     margin: 0;
     padding: 0;
@@ -767,47 +776,145 @@ h1, h2 {
     }
 } */
 
+@media screen and (max-width: 768px) {
+
+	.burger {
+		display: block;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	.header__block-info button {
+		display: none;	
+	}
+
+	.header__link-tg {
+		display: none;
+	}
+
+	.header__contacts-tel {
+		display: none;
+	}
+
+	.header__block-list {
+		display: none;
+	}
+	
+	.header__block-logo-slogan img {
+		max-width: 36px;
+		min-height: 24px;
+	}
+
+	.header__block-logo-slogan p {
+		font-size: 13px;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	.intro__button-block {
+		flex-direction: column;
+	}
+
+	.intro__target-audience-list {
+		flex-direction: column;
+	}
+
+	.intro__target-audience-list li {
+		border-radius: 24px;
+		gap: 8px;
+	}
+
+	.object-model__block ul {
+		display: none;
+	}
+
+	.object-model__cards {
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.strategy__block-stages-text-btn button {
+		display: none;
+	}
+
+	.object-model__cards-item {
+		min-height: 577px;
+		height: 100%;
+	}
+
+	.reasons__cards-block {
+		grid-template-areas: 
+			"reasons__cards-block-item1 reasons__cards-block-item1"
+			"reasons__cards-block-item2 reasons__cards-block-item3"
+			"reasons__cards-block-item4 reasons__cards-block-item5"
+			"reasons__cards-block-item4 reasons__cards-block-item6"; 
+	}
+	
+	.questions__block-list-form {
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	.footer__contacts-block {
+		flex-direction: column;
+	}
+
+}
+
+@media screen and (max-width: 820px) {
+	.footer__block li {
+		padding: 16px;
+	}
+
+	.footer__block li h4 {
+		font-size: 14px;
+	}
+
+	.footer__block li p {
+		font-size: 21px;
+	}
+
+}
+
+@media screen and (max-width: 923px) {
+	.footer__connection-mess-block {
+		flex-direction: column;
+	}
+
+	.footer__connection-mess-block li {
+		display: flex;
+		align-items: center;
+	}
+}
+
+
 @media screen and (max-width: 1520px) {
     .container {
         padding: 0 20px;
     }
-
-    /* ------- Блок Объект стратегии ------ */
     
     .object-model__cards {
         gap: 20px;
-    }
-    /* ------- /Блок Объект стратегии ------ */
-    
+    }    
 
 }
 
 @media screen and (max-width: 1220px) {
-    /* ------ Блок Интро ------ */
     .intro__header-block {
         max-width: 970px;
     }
-
-    .intro__header-block h1 {
-        font-size: 50px;
-
-    }
-    /* ------ /Блок Интро ------ */
-
-    /* ------- Блок Стратегия ------- */
+	
     .strategy__block-stages {
         display: flex;
         flex-direction: column;
     }
-
-
-    /* ------- /Блок Стратегия ------- */
-
-    /* ------- Блок Объект стратегии ------ */
     
     .object-model__cards {
         gap: 20px;
     }
     
-    /* ------- /Блок Объект стратегии ------ */
 }   

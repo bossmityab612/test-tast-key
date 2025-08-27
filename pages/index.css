@@ -547,7 +547,7 @@ h1 {
 }
 
 .questions__block-list-form ul {
-    margin: 0;
+    margin: 0 0 64px 0;
     padding: 0;
     max-width: 1003px;
     width: 100%;
@@ -555,21 +555,55 @@ h1 {
     flex-direction: column;
     gap: 8px;
     color: #fff;
-
+    cursor: pointer;
+    font-family: var(--rubik);
 }
 
 .questions__block-list-form li {
-    font-size: 24px;
-    background-color: #0C232D;
-    list-style: none;
-    max-height: 96px;
+    min-height: 96px;
     height: 100%;
+    padding: 24px;
+    background-color: #0C232D;
     border-radius: 24px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.questions__block-list-form div {
+    font-size: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 88px;
-    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.questions__block-list-form div::after {
+    /* content: '+'; */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.questions__block-list-form p {
+    border-top: 1px solid #fff;
+    padding-top: 16px;
+    /* padding: 0; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: white;
+}
+
+.questions__block-list-form li.active .questions__block-list-form p {
+    padding: 15px;
+    max-height: 200px;
 }
 
 .questions__block-list-form form {
@@ -708,6 +742,7 @@ h1 {
     min-height: 203px;
     height: 100%;
     display: flex;
+    justify-content: space-between;
     margin: 32px 0 0 0;
 }
 
@@ -749,15 +784,36 @@ h1 {
     border-radius: 0%;
 }
 
+.footer__block-navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    max-width: 615px;
+	width: 100%;
+    justify-content: flex-end;
+}
+
 .footer__block-navigation-buttons button {
-	border: 1px solid #000;
+    border: 1px solid #fff;
+    min-height: 64px;
 	display: flex;
 	flex-direction: column;
-	border-radius: 25px;
-	max-width: 615px;
-	max-height: 64px;
-	width: 100%;
-	height: 100%;
+    align-items: center;
+    justify-content: center;
+	border-radius: 35px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.footer__block-navigation-buttons button:nth-child(2n){
+    margin-bottom: 0;
+}
+
+.footer__block-navigation-buttons a {
+    color: #fff;
+    margin-top: 28px;
+    align-self: flex-end;
 }
 
 .footer__block-navigation-list a {
@@ -776,18 +832,12 @@ h1 {
     font-size: 24px;
 }
 
-.footer__bottom p {
+.footer__bottom span {
     padding: 0;
     margin: 0;
 }
 
 /* --------- /Подвал ------- */
-
-/* @media screen and (max-width: 390px) {
-    .intro__header-block {
-        max-width: 970px;
-    }
-} */
 
 @media screen and (max-width: 768px) {
 
@@ -916,10 +966,17 @@ h1 {
         padding: 0 20px;
     }
     
+    .header__block-list {
+        gap: 20px;
+    }
+    
     .object-model__cards {
         gap: 20px;
     }    
 
+    .intro__target-audience-list {
+        gap: 20px;
+    }
 }
 
 @media screen and (max-width: 1220px) {

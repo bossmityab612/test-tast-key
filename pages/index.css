@@ -546,7 +546,7 @@ h1 {
     height: 100%;
 }
 
-.questions__block-list-form ul {
+/*.questions__block-list-form ul {
     margin: 0 0 64px 0;
     padding: 0;
     max-width: 1003px;
@@ -582,7 +582,7 @@ h1 {
 }
 
 .questions__block-list-form div::after {
-    /* content: '+'; */
+    content: '+';
     position: absolute;
     right: 15px;
     top: 50%;
@@ -594,7 +594,7 @@ h1 {
 .questions__block-list-form p {
     border-top: 1px solid #fff;
     padding-top: 16px;
-    /* padding: 0; */
+    padding: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
@@ -617,7 +617,111 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 34px;
+}  */
+
+
+.accordion-container {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
+
+.accordion {
+    list-style: none;
+}
+
+.accordion__item {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.accordion__item:last-child {
+    border-bottom: none;
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion__header:hover {
+    background-color: #f9f9f9;
+}
+
+.accordion__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    background-color: #4a6cf7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+.accordion__icon::before {
+    content: "?";
+}
+
+.accordion__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.accordion__content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: #f8fafc;
+}
+
+.accordion__text {
+    padding: 20px 0;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.accordion__item--active .accordion__content {
+    max-height: 500px;
+}
+
+.accordion__item--active .accordion__header {
+    background-color: #f0f4ff;
+}
+
+.accordion__item--active .accordion__icon {
+    background-color: #3b56d9;
+}
+
+.accordion__item--active .accordion__icon::before {
+    content: "-";
+}
+
+@media (max-width: 600px) {
+    .accordion__header {
+        padding: 16px;
+    }
+    
+    .accordion__title {
+        font-size: 16px;
+    }
+    
+    .accordion__text {
+        font-size: 14px;
+    }
+}
+
 
 /* ---- /Блок Часто задаваемы вопросы ----- */
 

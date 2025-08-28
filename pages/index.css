@@ -549,39 +549,72 @@ h1 {
     height: 100%;
 }
 
-.accordion {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.accordeon__body {
+    padding-bottom: 30px;
+    display: none;
+    font-family: var(--rubik);
 }
 
-.accordion li {
-  border-bottom: 1px solid #ddd;
+.questions__accordeon-block {
+    max-width: 1003px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.accordion-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 12px;
-  transition: background-color 0.3s;
+.questions__header-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.accordion-header:hover {
-  background-color: #f7f7f7;
+.accordeon__item {
+    border-radius: 30px;
+    color: #F5E5D5;
+    padding: 0 30px;
+    border: none;
+    background-color: #001220;
+    transition: all .3s ease-out;
 }
 
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 12px;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+/* .accordeon__item.active {
+    background-color: #00C7FF;
+} */
+
+.accordeon__item.active .accordeon__header {
+    color: #fff;
 }
 
-.accordion li.active .accordion-content {
-  max-height: 300px; /* подбирай под размер текста */
-  padding: 12px;
+.accordeon__item.active svg {
+    transform: rotate(180deg);
+}
+
+.accordeon__item svg, 
+.accordeon__item svg path  {
+    transition: all .3s ease-out;
+}
+
+.accordeon__item.active svg path {
+    fill: #fff;
+}
+
+.accordeon__header {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    color: #F5E5D5;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+.accordeon__content {
+    font-size: 20px;
+    padding: 15px;
+    border-top: 1px solid #F5E5D5;
 }
 
 

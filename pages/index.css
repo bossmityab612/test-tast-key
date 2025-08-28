@@ -44,6 +44,9 @@ h2 {
 
 .header {
     background-color: #121E2A;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
 }
 
 .header__block {
@@ -546,181 +549,41 @@ h1 {
     height: 100%;
 }
 
-/*.questions__block-list-form ul {
-    margin: 0 0 64px 0;
-    padding: 0;
-    max-width: 1003px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    color: #fff;
-    cursor: pointer;
-    font-family: var(--rubik);
-}
-
-.questions__block-list-form li {
-    min-height: 96px;
-    height: 100%;
-    padding: 24px;
-    background-color: #0C232D;
-    border-radius: 24px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    overflow: hidden;
-}
-
-.questions__block-list-form div {
-    font-size: 24px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.questions__block-list-form div::after {
-    content: '+';
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.questions__block-list-form p {
-    border-top: 1px solid #fff;
-    padding-top: 16px;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: white;
-}
-
-.questions__block-list-form li.active .questions__block-list-form p {
-    padding: 15px;
-    max-height: 200px;
-}
-
-.questions__block-list-form form {
-    border: 1px solid #000;
-    max-width: 485px;
-    min-height: 660px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 34px;
-}  */
-
-
-.accordion-container {
-    max-width: 800px;
-    width: 100%;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
 .accordion {
-    list-style: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.accordion__item {
-    border-bottom: 1px solid #eaeaea;
+.accordion li {
+  border-bottom: 1px solid #ddd;
 }
 
-.accordion__item:last-child {
-    border-bottom: none;
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 12px;
+  transition: background-color 0.3s;
 }
 
-.accordion__header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.accordion-header:hover {
+  background-color: #f7f7f7;
 }
 
-.accordion__header:hover {
-    background-color: #f9f9f9;
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.accordion__icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;
-    flex-shrink: 0;
-    background-color: #4a6cf7;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    position: relative;
+.accordion li.active .accordion-content {
+  max-height: 300px; /* подбирай под размер текста */
+  padding: 12px;
 }
 
-.accordion__icon::before {
-    content: "?";
-}
-
-.accordion__title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2d3748;
-}
-
-.accordion__content {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: #f8fafc;
-}
-
-.accordion__text {
-    padding: 20px 0;
-    color: #4a5568;
-    line-height: 1.7;
-}
-
-.accordion__item--active .accordion__content {
-    max-height: 500px;
-}
-
-.accordion__item--active .accordion__header {
-    background-color: #f0f4ff;
-}
-
-.accordion__item--active .accordion__icon {
-    background-color: #3b56d9;
-}
-
-.accordion__item--active .accordion__icon::before {
-    content: "-";
-}
-
-@media (max-width: 600px) {
-    .accordion__header {
-        padding: 16px;
-    }
-    
-    .accordion__title {
-        font-size: 16px;
-    }
-    
-    .accordion__text {
-        font-size: 14px;
-    }
-}
 
 
 /* ---- /Блок Часто задаваемы вопросы ----- */
@@ -735,7 +598,6 @@ h1 {
 }
 
 .footer__block {
-    border: 1px solid #fff;
     padding-top: 64px;
 }
 
@@ -747,7 +609,6 @@ h1 {
 
 .footer__connection {
     width: 100%;
-    border: 1px solid #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1072,6 +933,7 @@ h1 {
     
     .header__block-list {
         gap: 20px;
+        padding-bottom: 16px;
     }
     
     .object-model__cards {
@@ -1080,6 +942,7 @@ h1 {
 
     .intro__target-audience-list {
         gap: 20px;
+        align-items: center;
     }
 }
 

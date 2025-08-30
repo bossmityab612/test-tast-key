@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 30,
+
+    observer: true,
+    observeParents: true, 
+
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
     },
     breakpoints: {
       768: {
@@ -24,6 +24,29 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // const images = document.querySelectorAll('.object-model__slide img');
+  // let loadedImages = 0;
+
+  // images.forEach(img => {
+  //   if (img.complete) {
+  //     checkAllImagesLoaded();
+  //   } else {
+  //     img.addEventListener('load', checkAllImagesLoaded);
+  //   }
+  // });
+
+  // function checkAllImagesLoaded() {
+  //   loadedImages++;
+  //   if (loadedImages === images.length) {
+  //     objectModelSwiper.update(); // Обновляем Swiper
+  //   }
+  // }
+
+  setTimeout(() => {
+    objectModelSwiper.update();
+    objectModelSwiper.slideTo(0); // Вернуться к первому слайду
+}, 100);
 });
 
 $('.accordeon__header').click(function() {

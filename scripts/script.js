@@ -1,3 +1,13 @@
+$(document).ready(function() {
+  $(document).ready(function() {
+    $('.burger').click(function() {
+      $('.burger').toggleClass('active');
+      $('.header__block-list').slideToggle();
+    });
+  });
+});
+
+
 // После загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
   const objectModelSwiper = new Swiper('.object-model__slider', {
@@ -25,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  objectModelSwiper();
   // const images = document.querySelectorAll('.object-model__slide img');
   // let loadedImages = 0;
 
@@ -75,7 +86,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
     return;
   }
   
-if (!phone) {
+  if (!phone) {
     alert('Пожалуйста, введите ваш номер телефона');
     return;
   }
@@ -85,7 +96,7 @@ if (!phone) {
     return;
   }
   
-  // Здесь обычно отправка данных на сервер
+  // Отправка данных на сервер
   alert('Спасибо! Ваш вопрос отправлен. Мы свяжемся с вами в ближайшее время.');
   this.reset();
 });

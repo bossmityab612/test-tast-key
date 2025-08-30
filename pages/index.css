@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *{
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
     box-sizing: border-box;
 }
 
@@ -83,6 +83,7 @@ h2 {
     max-width: 308px;
     width: 100%;
     padding-left: 16px;
+    font-size: 18px;
     border-left: 1px solid #fff;
     color: #fff;
     font-family: var(--rubik);
@@ -114,6 +115,7 @@ h2 {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__block-list li {
@@ -260,6 +262,13 @@ h1 {
     border: none;
     font-size: 20px;
     cursor: pointer;
+}
+
+.intro__button-block button:last-child {
+    color: #F5E5D5;
+    border: 1px solid #F5E5D5;
+    background-color: rgba(245, 229, 213, .01);
+    backdrop-filter: blur(16px);
 }
 
 .intro__target-audience-list {
@@ -450,6 +459,12 @@ h1 {
     border-radius: 24px;
     border: none;
     cursor: pointer;
+}
+
+.strategy__block-stages img {
+    border: 1px solid #000;
+    max-width: 873px;
+    width: 100%;
 }
 
 /* -------- /Блок Стратегия ------- */
@@ -1094,31 +1109,53 @@ textarea.questions-form__form-control {
 
 /* --------- /Подвал ------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
 
-	.burger {
-		display: block;
-	}
+    .reasons h2 {
+        font-size: 24px;
+    }
+
+    .intro__button-block button {
+        font-size: 17px;
+    }
+
+    .reasons__cards-block {
+        justify-items: center;
+    }
+
+    .reasons__cards-block-item {
+        max-width: 358px;
+        min-height: 171px;
+    }
+
+    .reasons button {
+        display: none;
+    }
+
+    .footer__connection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__block-navigation {
+        flex-direction: column;
+    }
+
+    .footer__block-navigation-buttons a {
+        align-self: center;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
 
 	h2 {
 		font-size: 24px;
-	}
-
-	.header__block-info button {
-		display: none;	
-	}
-
-	.header__link-tg {
-		display: none;
-	}
-
-	.header__contacts-tel {
-		display: none;
-	}
-
-	.header__block-list {
-		display: none;
-	}
+    }
 	
 	.header__block-logo-slogan img {
 		max-width: 36px;
@@ -1212,13 +1249,93 @@ textarea.questions-form__form-control {
 
 }
 
-@media screen and (max-width: 923px) {
+@media screen and (max-width: 930px) {
+
+    .header__block-info button {
+        max-width: 233px;
+    }
+
+        .header {
+        min-height: 96px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .header__block-info {
+        max-width: 204px;
+        min-height: 36px;
+    }
+
+    .header__block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+	.burger {
+		display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 50%;
+        max-width: 48px;
+        min-height: 48px;
+        width: 100%;
+        height: 100%;
+	}
+
+
+	.header__block-info button {
+		display: none;	
+	}
+
+	.header__link-tg {
+		display: none;
+	}
+
+	.header__contacts-tel {
+		display: none;
+	}
+
+	.header__block-list {
+		display: none;
+	}
 
 	.footer__connection-mess-block li {
 		display: flex;
 		align-items: center;
 	}
 }
+
+
+@media screen and (max-width: 1220px) {
+    .header__block-logo-slogan p {
+        font-size: 14px;
+    }
+
+    .header__block-info button {
+        max-width: 370px;
+    }
+    
+    .intro__header-block {
+        max-width: 970px;
+    }
+    
+    .strategy__block-stages {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    
+    .object-model__cards {
+        gap: 20px;
+    }
+
+}   
 
 
 @media screen and (max-width: 1520px) {
@@ -1240,19 +1357,3 @@ textarea.questions-form__form-control {
         align-items: center;
     }
 }
-
-@media screen and (max-width: 1220px) {
-    .intro__header-block {
-        max-width: 970px;
-    }
-
-    .strategy__block-stages {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .object-model__cards {
-        gap: 20px;
-    }
-    
-}   

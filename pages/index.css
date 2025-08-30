@@ -517,12 +517,10 @@ h1 {
 
 .object-model__slider {
     width: 100%;
-    border: 1px solid #000;
 }
 
 .swiper-slide  {
     height: auto;
-    border: 1px solid red;
     display: flex;
 }
 

@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
   //   }
   // }
 
-  setTimeout(() => {
-    objectModelSwiper.update();
-    objectModelSwiper.slideTo(0); // Вернуться к первому слайду
-}, 100);
+  // setTimeout(() => {
+  //   objectModelSwiper.update();
+  //   objectModelSwiper.slideTo(0); // Вернуться к первому слайду
+  // }, 100);
 });
 
 $('.accordeon__header').click(function() {

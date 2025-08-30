@@ -61,3 +61,51 @@ $('.accordeon__header').click(function() {
     $(this).closest('.accordeon__item').addClass('active');
   }
 });
+
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Валидация формы
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const agree = document.getElementById('agree').checked;
+  
+  if (!name) {
+    alert('Пожалуйста, введите ваше имя');
+    return;
+  }
+  
+if (!phone) {
+    alert('Пожалуйста, введите ваш номер телефона');
+    return;
+  }
+  
+  if (!agree) {
+    alert('Необходимо ваше согласие на обработку персональных данных');
+    return;
+  }
+  
+  // Здесь обычно отправка данных на сервер
+  alert('Спасибо! Ваш вопрос отправлен. Мы свяжемся с вами в ближайшее время.');
+  this.reset();
+});
+
+// Маска для телефона
+document.getElementById('phone').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, '');
+  
+  if (value.length > 0) {
+    value = value.match(/.{1,3}/g).join(') ');
+    value = '(' + value;
+    
+    if (value.length > 8) {
+      value = value.substring(0, 8) + '-' + value.substring(8);
+    }
+    
+    if (value.length > 11) {
+      value = value.substring(0, 11) + '-' + value.substring(11, 13);
+    }
+  }
+  
+  e.target.value = value;
+});

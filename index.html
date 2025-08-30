@@ -382,9 +382,43 @@
               </div>
             </div>
           </div>
-          <form action="#">
-            ФОРМА
-          </form>
+
+          <div class="questions-form">
+            <div class="questions-form__container">
+              <div class="questions-form__header">
+                <h4>Не нашли ответ на вопрос?</h4>
+                <p>Задайте его нашему специалисту!</p>
+              </div>
+              <div class="questions-form__form-container">
+                <form id="feedbackForm">
+                  <div class="questions-form__form-group">
+                    <label for="name" class="questions-form__required">Как к вам обращаться?</label>
+                    <input type="text" id="name" class="questions-form__form-control" placeholder="Имя Отчество" required>
+                  </div>
+                  
+                  <div class="questions-form__form-group">
+                    <label for="phone" class="questions-form__required">Ваш номер телефона?</label>
+                    <div class="questions-form__phone-input">
+                      <div class="questions-form__phone-prefix">+7</div>
+                      <input type="tel" id="phone" class="questions-form__form-control" placeholder="(978) 123-12-13" required>
+                    </div>
+                  </div>
+                  
+                  <div class="questions-form__form-group">
+                    <label for="question">Ваш вопрос</label>
+                    <textarea id="question" class="questions-form__form-control" placeholder="Ваш вопрос..."></textarea>
+                  </div>
+                  
+                  <div class="questions-form__checkbox-group">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">Я согласен на обработку персональных данных</label>
+                  </div>
+                    
+                  <button type="submit" class="questions-form__btn">Задать вопрос</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

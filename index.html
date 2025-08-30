@@ -8,7 +8,7 @@
   <meta name="format-detection" content="telephone=no"/>
   <title>KEY</title>
   <link rel="icon" href="./images/logo/icon.svg"> 
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 
@@ -153,7 +153,7 @@
         </ul>
         <div class="object-model__cards">
           <div class="object-model__cards-item">
-            <div class="swiper">
+            <!-- <div class="swiper">
               <div class="swiper-wrapper object-model__image-block">
                 <div class="object-model__image-block-item">
                   <img class="swiper-slide" src="./images/strategy-image.jpg" alt="">
@@ -161,7 +161,24 @@
                   <img class="swiper-slide" src="./images/strategy-image.jpg" alt="">
                 </div>
               </div>
+            </div> -->
+
+            <div class="swiper object-model__slider">
+              <div class="swiper-wrapper">
+                <!-- Слайды -->
+                <img class="swiper-slide object-model__slide" src="./images/strategy-image.jpg" alt="">
+                <img class="swiper-slide object-model__slide" src="./images/strategy-image.jpg" alt="">
+                <img class="swiper-slide object-model__slide" src="./images/strategy-image.jpg" alt="">
+                <img class="swiper-slide object-model__slide" src="./images/strategy-image.jpg" alt="">
+                <img class="swiper-slide object-model__slide" src="./images/strategy-image.jpg" alt="">
+              </div>
+              
+              <!-- Добавьте пагинацию и навигацию -->
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
+
             <div class="object-model__main-discription-block">
               <div class="object__block-text">
                 <span>Старт продаж</span>

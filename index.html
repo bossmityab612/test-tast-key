@@ -8,6 +8,7 @@
   <meta name="format-detection" content="telephone=no"/>
   <title>KEY</title>
   <link rel="icon" href="./images/logo/icon.svg"> 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 
@@ -152,7 +153,15 @@
         </ul>
         <div class="object-model__cards">
           <div class="object-model__cards-item">
-            <img src="./images/strategy-image.jpg" alt="">
+            <div class="swiper">
+              <div class="swiper-wrapper object-model__image-block">
+                <div class="object-model__image-block-item">
+                  <img class="swiper-slide" src="./images/strategy-image.jpg" alt="">
+                  <img class="swiper-slide" src="./images/strategy-image.jpg" alt="">
+                  <img class="swiper-slide" src="./images/strategy-image.jpg" alt="">
+                </div>
+              </div>
+            </div>
             <div class="object-model__main-discription-block">
               <div class="object__block-text">
                 <span>Старт продаж</span>
@@ -294,6 +303,56 @@
                 </div>
               </div>
             </div>
+
+            <div class="question-accordeon accordeon" id="accordeon">
+              <div class="question__list accordeon__item">
+                <div class="question-1 accordeon__header">
+                  <div class="questions__header-block">
+                    <img src="./images/quesyions-sign.svg" alt="" class="questions__sign">
+                    <span>Как оформляется сделка?</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 16 24" fill="none">
+                    <path d="M15.6134 8.94659C15.7384 8.82263 15.8376 8.67517 15.9053 8.51269C15.973 8.35021 16.0078 8.17593 16.0078 7.99992C16.0078 7.8239 15.973 7.64963 15.9053 7.48715C15.8376 7.32467 15.7384 7.1772 15.6134 7.05325L8.94675 0.386585C8.8228 0.261614 8.67533 0.162421 8.51285 0.0947297C8.35037 0.0270382 8.1761 -0.00781284 8.00008 -0.00781285C7.82407 -0.00781286 7.64979 0.0270381 7.48731 0.0947297C7.32483 0.162421 7.17737 0.261614 7.05341 0.386585L0.386749 7.05325C0.261778 7.1772 0.162583 7.32467 0.0948912 7.48715C0.0271994 7.64963 -0.00765072 7.8239 -0.00765073 7.99992C-0.00765073 8.17593 0.0271994 8.35021 0.0948912 8.51269C0.162583 8.67517 0.261777 8.82263 0.386749 8.94658C0.510699 9.07156 0.658166 9.17075 0.820645 9.23844C0.983123 9.30613 1.1574 9.34098 1.33341 9.34098C1.50943 9.34098 1.6837 9.30613 1.84618 9.23844C2.00866 9.17075 2.15613 9.07156 2.28008 8.94659L8.00008 3.21325L13.7201 8.94659C13.844 9.07156 13.9915 9.17075 14.154 9.23844C14.3165 9.30613 14.4907 9.34098 14.6667 9.34098C14.8428 9.34098 15.017 9.30613 15.1795 9.23844C15.342 9.17075 15.4895 9.07156 15.6134 8.94659ZM8.94675 23.6133L15.6134 16.9466C15.7377 16.8223 15.8363 16.6747 15.9036 16.5123C15.9709 16.3498 16.0055 16.1757 16.0055 15.9999C16.0055 15.6448 15.8645 15.3043 15.6134 15.0533C15.4891 14.9289 15.3415 14.8303 15.1791 14.763C15.0167 14.6958 14.8426 14.6611 14.6667 14.6611C14.3117 14.6611 13.9712 14.8022 13.7201 15.0533L8.00008 20.7866L2.28008 15.0533C2.15613 14.9283 2.00866 14.8291 1.84618 14.7614C1.6837 14.6937 1.50943 14.6589 1.33341 14.6589C1.1574 14.6589 0.983123 14.6937 0.820645 14.7614C0.658165 14.8291 0.510699 14.9283 0.386749 15.0533C0.261777 15.1772 0.162583 15.3247 0.0948909 15.4871C0.0271991 15.6496 -0.00765107 15.8239 -0.00765108 15.9999C-0.00765108 16.1759 0.027199 16.3502 0.0948908 16.5127C0.162583 16.6752 0.261777 16.8226 0.386749 16.9466L7.05341 23.6133C7.17736 23.7382 7.32483 23.8374 7.48731 23.9051C7.64979 23.9728 7.82406 24.0077 8.00008 24.0077C8.1761 24.0077 8.35037 23.9728 8.51285 23.9051C8.67533 23.8374 8.8228 23.7382 8.94675 23.6133Z" fill="url(#paint0_linear_47_18)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_47_18" x1="16.0078" y1="-0.0078125" x2="-6.16305" y2="14.7775" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F5E5D5"/>
+                        <stop offset="1" stop-color="#6E5A41"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>                             
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__content">
+                    Lorem ipsum dolor sit amet consectetur. Proin viverra ultricies lectus gravida at varius ornare facilisis. Lectus leo fermentum ultrices lobortis. Pretium a egestas mauris duis pellentesque. Lectus ultrices vestibulum ut proin scelerisque et. Condimentum neque mattis sed suspendisse varius habitasse. Neque integer pulvinar quis nascetur etiam sagittis auctor proin. Mauris lacus vitae in auctor.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="question-accordeon accordeon" id="accordeon">
+              <div class="question__list accordeon__item">
+                <div class="question-1 accordeon__header">
+                  <div class="questions__header-block">
+                    <img src="./images/quesyions-sign.svg" alt="" class="questions__sign">
+                    <span>Как оформляется сделка?</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 16 24" fill="none">
+                    <path d="M15.6134 8.94659C15.7384 8.82263 15.8376 8.67517 15.9053 8.51269C15.973 8.35021 16.0078 8.17593 16.0078 7.99992C16.0078 7.8239 15.973 7.64963 15.9053 7.48715C15.8376 7.32467 15.7384 7.1772 15.6134 7.05325L8.94675 0.386585C8.8228 0.261614 8.67533 0.162421 8.51285 0.0947297C8.35037 0.0270382 8.1761 -0.00781284 8.00008 -0.00781285C7.82407 -0.00781286 7.64979 0.0270381 7.48731 0.0947297C7.32483 0.162421 7.17737 0.261614 7.05341 0.386585L0.386749 7.05325C0.261778 7.1772 0.162583 7.32467 0.0948912 7.48715C0.0271994 7.64963 -0.00765072 7.8239 -0.00765073 7.99992C-0.00765073 8.17593 0.0271994 8.35021 0.0948912 8.51269C0.162583 8.67517 0.261777 8.82263 0.386749 8.94658C0.510699 9.07156 0.658166 9.17075 0.820645 9.23844C0.983123 9.30613 1.1574 9.34098 1.33341 9.34098C1.50943 9.34098 1.6837 9.30613 1.84618 9.23844C2.00866 9.17075 2.15613 9.07156 2.28008 8.94659L8.00008 3.21325L13.7201 8.94659C13.844 9.07156 13.9915 9.17075 14.154 9.23844C14.3165 9.30613 14.4907 9.34098 14.6667 9.34098C14.8428 9.34098 15.017 9.30613 15.1795 9.23844C15.342 9.17075 15.4895 9.07156 15.6134 8.94659ZM8.94675 23.6133L15.6134 16.9466C15.7377 16.8223 15.8363 16.6747 15.9036 16.5123C15.9709 16.3498 16.0055 16.1757 16.0055 15.9999C16.0055 15.6448 15.8645 15.3043 15.6134 15.0533C15.4891 14.9289 15.3415 14.8303 15.1791 14.763C15.0167 14.6958 14.8426 14.6611 14.6667 14.6611C14.3117 14.6611 13.9712 14.8022 13.7201 15.0533L8.00008 20.7866L2.28008 15.0533C2.15613 14.9283 2.00866 14.8291 1.84618 14.7614C1.6837 14.6937 1.50943 14.6589 1.33341 14.6589C1.1574 14.6589 0.983123 14.6937 0.820645 14.7614C0.658165 14.8291 0.510699 14.9283 0.386749 15.0533C0.261777 15.1772 0.162583 15.3247 0.0948909 15.4871C0.0271991 15.6496 -0.00765107 15.8239 -0.00765108 15.9999C-0.00765108 16.1759 0.027199 16.3502 0.0948908 16.5127C0.162583 16.6752 0.261777 16.8226 0.386749 16.9466L7.05341 23.6133C7.17736 23.7382 7.32483 23.8374 7.48731 23.9051C7.64979 23.9728 7.82406 24.0077 8.00008 24.0077C8.1761 24.0077 8.35037 23.9728 8.51285 23.9051C8.67533 23.8374 8.8228 23.7382 8.94675 23.6133Z" fill="url(#paint0_linear_47_18)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_47_18" x1="16.0078" y1="-0.0078125" x2="-6.16305" y2="14.7775" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F5E5D5"/>
+                        <stop offset="1" stop-color="#6E5A41"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>                             
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__content">
+                    Lorem ipsum dolor sit amet consectetur. Proin viverra ultricies lectus gravida at varius ornare facilisis. Lectus leo fermentum ultrices lobortis. Pretium a egestas mauris duis pellentesque. Lectus ultrices vestibulum ut proin scelerisque et. Condimentum neque mattis sed suspendisse varius habitasse. Neque integer pulvinar quis nascetur etiam sagittis auctor proin. Mauris lacus vitae in auctor.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <form action="#">
             ФОРМА
@@ -359,8 +418,9 @@
       </div>
     </div>
   </footer>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="./scripts/script.js"></script>
 
 </body>

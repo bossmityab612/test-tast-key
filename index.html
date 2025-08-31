@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KEY</title>
   <link rel="icon" href="./images/logo/icon.svg"> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -20,7 +20,7 @@
           <img src="./images/logo.svg" alt="Логотип">
           <p>Ключ к лучшей недвижимости Крыма!</p>
         </div>
-        <button>Скачать ТОП-5 инвест-предложений в Крыму</button>
+        <button class="button">Скачать ТОП-5 инвест-предложений в Крыму</button>
         <a class="header__link-tg">
           <img src="./images/header-slogan-image-tg.svg" alt="Лого Телеграм">
           <div>
@@ -42,7 +42,7 @@
           <li><a href="#">Комплексы</a></li>
           <li><a href="#">Онлайн-экскурсия</a></li>
         </ul>
-        <button>Получить инвестиционный расчет</button>
+        <button class="button">Получить инвестиционный расчет</button>
       </div>
       <div class="burger">
         <div class="burger__block">
@@ -61,8 +61,8 @@
           <h1>ИНВЕСТИРУЙТЕ В КУРОРТНУЮ НЕДВИЖИМОСТЬ КРЫМА С ДОХОДНОСТЬЮ ОТ 15% ГОДОВЫХ</h1>
           <h3>Полное сопровождение, юридическая прозрачность, доход с аренды и роста стоимости</h2>
           <div class="intro__button-block">
-            <button>Получить инвестиционный расчет</button>
-            <button>Скачать презентацию с расчётом доходности</button>
+            <button class="button">Получить инвестиционный расчет</button>
+            <button class="button">Скачать презентацию с расчётом доходности</button>
           </div>
         </div>
         
@@ -111,7 +111,7 @@
         </div>
       </div>
 
-      <button>Сравнить с другими регионами</button>
+      <button class="button">Сравнить с другими регионами</button>
 
     </section>
 
@@ -130,7 +130,7 @@
                 <span>3. ДОЛГОСРОЧНОЕ ВЛАДЕНИЕ С КАПИТАЛИЗАЦИЕЙ</span><br><span>Рост + аренда + переуступка</span>
               </li>
             </ul>
-            <button>Выбрать стратегию и рассчитать доход</button>
+            <button class="button">Выбрать стратегию и рассчитать доход</button>
           </div>
           <img src="./images/strategy-image.jpg" alt="Картинка">
         </div>
@@ -163,7 +163,8 @@
               </div>
               
               <div class="swiper-pagination"></div>
-              <!-- <div class="swiper-button-prev"></div> -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
 
             <div class="object-model__main-discription-block">
@@ -194,7 +195,8 @@
               </div>
               
               <div class="swiper-pagination"></div>
-              <!-- <div class="swiper-button-prev"></div> -->
+              <div class="swiper-button-prev"></div> 
+              <div class="swiper-button-next"></div>
             </div>
 
             <div class="object-model__main-discription-block">
@@ -225,7 +227,8 @@
               </div>
               
               <div class="swiper-pagination"></div>
-              <!-- <div class="swiper-button-prev"></div> -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
 
             <div class="object-model__main-discription-block">
@@ -246,10 +249,149 @@
             </div>
           </div>
         </div>
-
         <button class="object-model__button">Показать еще</button>
       </div>
     </section>
+    
+    <!-- <section class="catalog">
+      <div class="container">
+        <h2 class="section-header" id="catalog">ВЫБЕРЕТЕ ОБЪЕКТ ПОД ВАШУ ИНВЕСТИЦИОННУЮ СТРАТЕГИЮ</h2>
+        <div class=" catalog__selectors catalog__filter flex">
+          <button class="active" data-id="2">MoreYalta</button>
+          <button class="" data-id="3">Новая Керкинитида</button>
+          <button class="" data-id="4">Лайнер</button>
+          <button class="" data-id="5">Массандра парк</button>
+          <button class="" data-id="6">Новая Ливадия</button>
+          <button class="" data-id="7">КД Массандра Парк</button>
+          <button class="" data-id="8">Парковая Резиденция</button>
+          <button class="" data-id="9">Крымская Резиденция</button>
+          <button class="" data-id="10">Аквамарин парк</button>
+        </div>
+
+        <label>
+          <div class="input-calculator input-select flex">
+            <input type="text" class="investment-input" value="MoreYalta" readonly="">
+            <div class="input-select-items">
+              <ul class="catalog__filter">
+                <li class="active" data-id="2">MoreYalta</li>
+                <li class="" data-id="3">Новая Керкинитида</li>
+                <li class="" data-id="4">Лайнер</li>
+                <li class="" data-id="5">Массандра парк</li>
+                <li class="" data-id="6">Новая Ливадия</li>
+                <li class="" data-id="7">КД Массандра Парк</li>
+                <li class="" data-id="8">Парковая Резиденция</li>
+                <li class="" data-id="9">Крымская Резиденция</li>
+                <li class="" data-id="10">Аквамарин парк</li>
+              </ul>
+            </div>
+            <div class="currency-icon input-select-btn flex">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.71 9.70994C17.8037 9.61698 17.8781 9.50637 17.9289 9.38452C17.9797 9.26266 18.0058 9.13195 18.0058 8.99994C18.0058 8.86793 17.9797 8.73722 17.9289 8.61536C17.8781 8.4935 17.8037 8.3829 17.71 8.28994L12.71 3.28994C12.617 3.19621 12.5064 3.12182 12.3846 3.07105C12.2627 3.02028 12.132 2.99414 12 2.99414C11.868 2.99414 11.7373 3.02028 11.6154 3.07105C11.4936 3.12182 11.383 3.19621 11.29 3.28994L6.29 8.28994C6.19627 8.3829 6.12188 8.4935 6.07111 8.61536C6.02034 8.73722 5.9942 8.86793 5.9942 8.99994C5.9942 9.13195 6.02034 9.26266 6.07111 9.38452C6.12188 9.50637 6.19627 9.61698 6.29 9.70994C6.38296 9.80367 6.49356 9.87806 6.61542 9.92883C6.73728 9.9796 6.86799 10.0057 7 10.0057C7.13201 10.0057 7.26272 9.9796 7.38458 9.92883C7.50644 9.87806 7.61704 9.80367 7.71 9.70994L12 5.40994L16.29 9.70994C16.383 9.80367 16.4936 9.87806 16.6154 9.92883C16.7373 9.9796 16.868 10.0057 17 10.0057C17.132 10.0057 17.2627 9.9796 17.3846 9.92883C17.5064 9.87806 17.617 9.80367 17.71 9.70994ZM12.71 20.7099L17.71 15.7099C17.8032 15.6167 17.8772 15.506 17.9277 15.3842C17.9781 15.2624 18.0041 15.1318 18.0041 14.9999C18.0041 14.7336 17.8983 14.4782 17.71 14.2899C17.6168 14.1967 17.5061 14.1227 17.3842 14.0723C17.2624 14.0218 17.1319 13.9958 17 13.9958C16.7337 13.9958 16.4783 14.1016 16.29 14.2899L12 18.5899L7.71 14.2899C7.61704 14.1962 7.50644 14.1218 7.38458 14.071C7.26272 14.0203 7.13201 13.9941 7 13.9941C6.86799 13.9941 6.73728 14.0203 6.61542 14.071C6.49356 14.1218 6.38296 14.1962 6.29 14.2899C6.19627 14.3829 6.12188 14.4935 6.07111 14.6154C6.02034 14.7372 5.9942 14.8679 5.9942 14.9999C5.9942 15.1319 6.02034 15.2627 6.07111 15.3845C6.12188 15.5064 6.19627 15.617 6.29 15.7099L11.29 20.7099C11.383 20.8037 11.4936 20.8781 11.6154 20.9288C11.7373 20.9796 11.868 21.0057 12 21.0057C12.132 21.0057 12.2627 20.9796 12.3846 20.9288C12.5064 20.8781 12.617 20.8037 12.71 20.7099Z" fill="#121E2A"></path>
+              </svg>
+            </div>
+          </div>
+        </label>
+
+        <ul class="catalog__items catalog__list grid">
+          <li>
+            <article class="catalog__item">
+              <div data-mousemove-swipe="" class="swiper product-silder swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper" id="swiper-wrapper-03f78bbdf823bad5" aria-live="polite">
+                  <div class="swiper-slide swiper-slide-active" style="width: 483px;" role="group" aria-label="1 / 3">
+                    <img width="960" height="1280" src="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-2.jpg" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-2.jpg 960w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-2-225x300.jpg 225w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-2-768x1024.jpg 768w" sizes="(max-width: 960px) 100vw, 960px">        
+                  </div>
+                  <div class="swiper-slide swiper-slide-next" style="width: 483px;" role="group" aria-label="2 / 3">
+                    <img width="960" height="1280" src="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-36.jpg" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-36.jpg 960w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-36-225x300.jpg 225w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-36-768x1024.jpg 768w" sizes="(max-width: 960px) 100vw, 960px">        
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 3" style="width: 483px;">
+                    <img width="2052" height="2203" src="https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус.png 2052w, https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус-279x300.png 279w, https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус-954x1024.png 954w, https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус-768x825.png 768w, https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус-1431x1536.png 1431w, https://unitkey.estate/wp-content/uploads/2025/08/№50_Б-корпус-1908x2048.png 1908w" sizes="(max-width: 2052px) 100vw, 2052px">
+                  </div>
+                </div>
+                <div class="product-silder-scrollbar swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+              </div>
+
+              <div class="catalog__item-info">
+                <div class="catalog__item-tags flex">
+
+                </div>
+                <h3>Апартамент-студия, 30.03 кв/м  (4/8 этаж)</h3>
+                <p>Республика Крым, г. Ялта, п. Гурзуф, Геологов 7, комплекс апартаментов More.Yalta, корпус Б, апартамент №50</p>
+                <div class="row flex">
+                  <strong>13 280 000 ₽</strong>
+                </div>
+                <button class="button dark get-object" data-id="196"><span>Узнать доходность проекта</span></button>
+              </div>
+            </article>
+          </li>  
+          <li>
+            <article class="catalog__item">
+              <div data-mousemove-swipe="" class="swiper product-silder swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper" id="swiper-wrapper-eaf1041fb516933da" aria-live="polite">
+                  <div class="swiper-slide swiper-slide-active" style="width: 483px;" role="group" aria-label="1 / 3">
+                    <img width="1208" height="1611" src="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-1.jpg" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-1.jpg 1208w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-1-225x300.jpg 225w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-1-768x1024.jpg 768w, https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-1-1152x1536.jpg 1152w" sizes="(max-width: 1208px) 100vw, 1208px">        
+                  </div>
+                  <div class="swiper-slide swiper-slide-next" style="width: 483px;" role="group" aria-label="2 / 3">
+                    <img width="1208" height="1820" src="https://unitkey.estate/wp-content/uploads/2025/08/4_h_V2_VRayPhysicalCamera026.jpg" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/4_h_V2_VRayPhysicalCamera026.jpg 1208w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_V2_VRayPhysicalCamera026-199x300.jpg 199w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_V2_VRayPhysicalCamera026-680x1024.jpg 680w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_V2_VRayPhysicalCamera026-768x1157.jpg 768w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_V2_VRayPhysicalCamera026-1019x1536.jpg 1019w" sizes="(max-width: 1208px) 100vw, 1208px">        
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 3" style="width: 483px;">
+                    <img width="1208" height="1815" src="https://unitkey.estate/wp-content/uploads/2025/08/4_h_1_VRayPhysicalCamera003.jpg" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/4_h_1_VRayPhysicalCamera003.jpg 1208w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_1_VRayPhysicalCamera003-200x300.jpg 200w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_1_VRayPhysicalCamera003-682x1024.jpg 682w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_1_VRayPhysicalCamera003-768x1154.jpg 768w, https://unitkey.estate/wp-content/uploads/2025/08/4_h_1_VRayPhysicalCamera003-1022x1536.jpg 1022w" sizes="(max-width: 1208px) 100vw, 1208px">        
+                  </div>
+                </div>
+                <div class="product-silder-scrollbar swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+                <div class="catalog__item-info">
+                  <div class="catalog__item-tags flex">
+                    <span>Старт продаж</span>
+                    <span>Вид на море</span>
+                    <span>Сдается под управления</span>
+                  </div>
+                <h3>Апартамент 2К, 65.79 кв.м. (2/8 этаж)</h3>
+                <p>Республика Крым, г. Ялта, п. Гурзуф, Геологов 7, комплекс апартаментов More.Yalta, корпус Г, апартамент №8</p>
+                <div class="row flex">
+                  <strong>17 415 313 ₽</strong>
+                  <span>От 15% годовых </span>
+                </div>
+                <button class="button dark get-object" data-id="144"><span>Узнать доходность проекта</span></button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="catalog__item">
+              <div data-mousemove-swipe="" class="swiper product-silder swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper" id="swiper-wrapper-9f556c2196e52bef" aria-live="polite">
+                  <div class="swiper-slide swiper-slide-active" style="width: 483px;" role="group" aria-label="1 / 3">
+                    <img width="1208" height="680" src="https://unitkey.estate/wp-content/uploads/2025/08/glr_00001-1-1_compressed.webp" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/glr_00001-1-1_compressed.webp 1208w, https://unitkey.estate/wp-content/uploads/2025/08/glr_00001-1-1_compressed-300x169.webp 300w, https://unitkey.estate/wp-content/uploads/2025/08/glr_00001-1-1_compressed-1024x576.webp 1024w, https://unitkey.estate/wp-content/uploads/2025/08/glr_00001-1-1_compressed-768x432.webp 768w" sizes="(max-width: 1208px) 100vw, 1208px">        
+                  </div>
+                  <div class="swiper-slide swiper-slide-next" style="width: 483px;" role="group" aria-label="2 / 3">
+                    <img width="1208" height="925" src="https://unitkey.estate/wp-content/uploads/2025/08/гостинная_5_2-1-1_compressed-1.webp" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/гостинная_5_2-1-1_compressed-1.webp 1208w, https://unitkey.estate/wp-content/uploads/2025/08/гостинная_5_2-1-1_compressed-1-300x230.webp 300w, https://unitkey.estate/wp-content/uploads/2025/08/гостинная_5_2-1-1_compressed-1-1024x784.webp 1024w, https://unitkey.estate/wp-content/uploads/2025/08/гостинная_5_2-1-1_compressed-1-768x588.webp 768w" sizes="(max-width: 1208px) 100vw, 1208px">        
+                  </div>
+                  <div class="swiper-slide" role="group" aria-label="3 / 3" style="width: 483px;">
+                    <img width="1208" height="1815" src="https://unitkey.estate/wp-content/uploads/2025/08/детская_2-1-1_compressed.webp" class="attachment-full size-full" alt="" decoding="async" srcset="https://unitkey.estate/wp-content/uploads/2025/08/детская_2-1-1_compressed.webp 1208w, https://unitkey.estate/wp-content/uploads/2025/08/детская_2-1-1_compressed-200x300.webp 200w, https://unitkey.estate/wp-content/uploads/2025/08/детская_2-1-1_compressed-682x1024.webp 682w, https://unitkey.estate/wp-content/uploads/2025/08/детская_2-1-1_compressed-768x1154.webp 768w, https://unitkey.estate/wp-content/uploads/2025/08/детская_2-1-1_compressed-1022x1536.webp 1022w" sizes="(max-width: 1208px) 100vw, 1208px">        
+                  </div>
+                </div>
+                <div class="product-silder-scrollbar swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+                <div class="catalog__item-info">
+                  <div class="catalog__item-tags flex">
+
+                  </div>
+                  <h3>Апартамент 2Е, 48.86 кв.м. (2/8 этаж)</h3>
+                  <p>Республика Крым, г. Ялта, п. Гурзуф, Геологов 7, комплекс апартаментов More.Yalta, корпус Б, апартамент №8</p>
+                  <div class="row flex">
+                    <strong>17 132 173 ₽</strong>
+                    <span>От 15% годовых </span>
+                  </div>
+                  <button class="button dark get-object" data-id="137"><span>Узнать доходность проекта</span></button>
+                </div>
+            </article>
+          </li>
+        </ul>
+        <button class="button dark view-more" data-complex="2" data-page="1"><span>Смотреть ещё</span></button>
+      </div>
+    </section> -->
 
     <section class="questions">
       <div class="questions__block container">

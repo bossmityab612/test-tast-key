@@ -1,3 +1,5 @@
+// ---------- Бургер
+
 $(document).ready(function() {
   $(document).ready(function() {
     $('.burger').click(function() {
@@ -6,14 +8,16 @@ $(document).ready(function() {
     });
   });
 });
+// ---------- /Бургер
 
+//------ Блок Объектная модель
 
 // После загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
   const objectModelSwiper = new Swiper('.object-model__slider', {
-    autoplay: {
-      delay: 5000,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    // },
     loop: true,
     slidesPerView: 1,
     spaceBetween: 30,
@@ -25,40 +29,59 @@ document.addEventListener('DOMContentLoaded', function() {
       el: '.swiper-pagination',
       clickable: true,
     },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 1,
-      }
+
+    navigation: {
+      nextEl: '.object-model__slider .swiper-button-next',
+      prevEl: '.object-model__slider .swiper-button-prev',
     }
   });
 
   objectModelSwiper();
-  // const images = document.querySelectorAll('.object-model__slide img');
-  // let loadedImages = 0;
+  const images = document.querySelectorAll('.object-model__slide img');
+  let loadedImages = 0;
 
-  // images.forEach(img => {
-  //   if (img.complete) {
-  //     checkAllImagesLoaded();
-  //   } else {
-  //     img.addEventListener('load', checkAllImagesLoaded);
-  //   }
-  // });
+  images.forEach(img => {
+    if (img.complete) {
+      checkAllImagesLoaded();
+    } else {
+      img.addEventListener('load', checkAllImagesLoaded);
+    }
+  });
 
-  // function checkAllImagesLoaded() {
-  //   loadedImages++;
-  //   if (loadedImages === images.length) {
-  //     objectModelSwiper.update(); // Обновляем Swiper
-  //   }
-  // }
+  function checkAllImagesLoaded() {
+    loadedImages++;
+    if (loadedImages === images.length) {
+      objectModelSwiper.update(); // Обновляем Swiper
+    }
+  }
 
-  // setTimeout(() => {
-  //   objectModelSwiper.update();
-  //   objectModelSwiper.slideTo(0); // Вернуться к первому слайду
-  // }, 100);
+  setTimeout(() => {
+    objectModelSwiper.update();
+    objectModelSwiper.slideTo(0); // Вернуться к первому слайду
+  }, 100);
 });
+
+// ------- Блок Объектная модель
+
+
+// $(document).on('click', '.input-select-items li', function(e) {
+//   const value = $(this).text();
+
+//   $(this).closest('label').find('input').val(value);
+//   $(this).closest('label').find('.input-select-items ul').slideUp();
+// });
+
+// $(document).on('click', '.input-select-btn', function(e) {
+//   $(this).closest('label').find('.input-select-items ul').slideToggle();
+// });
+
+// $(".catalog__selectors button").on("click", function () {
+//   $(".catalog__selectors button").removeClass('active');
+
+//   $(this).addClass('active');
+// });
+
+//------ /Блок Объектная модель
 
 $('.accordeon__header').click(function() {
   if ($(this).closest('.accordeon__item').hasClass('active')) {

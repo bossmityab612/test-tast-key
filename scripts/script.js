@@ -1,3 +1,22 @@
+const popup = document.querySelector('.popup'); //Всплывающее окно
+const openPopupButton = document.querySelector('.button'); //Кнопка открытия попапа
+const closePopupButton = document.querySelector('.popup__button-exit'); //Кнопка закрытия попапа
+
+// ------ Попап окно обратной связи
+
+// Открытие и закрытие попапа
+openPopupButton.addEventListener('click', () => {
+	popup.classList.add('popup_opened');
+	nameForm.value = nameInput.textContent;
+	jobForm.value = jobInput.textContent;
+});
+
+closePopupButton.addEventListener('click', () => {
+  popup.classList.remove('popup_opened');
+});
+
+// ------ /Попап окно обратной связи
+
 // ---------- Бургер
 
 $(document).ready(function() {

@@ -34,6 +34,10 @@ body {
     margin: 0 auto;
 }
 
+.content {
+  position: relative;
+}
+
 h1, h2 {
     font-family: 'Poiret One', Arial, Helvetica, sans-serif;
 }
@@ -695,6 +699,8 @@ h1 {
     height: 100%;
     border-radius: 30px;
     margin: 16px 0 0 0;
+    cursor: pointer;
+    transition: all .3s ease-out;
 }
 
 .object-model__button {
@@ -992,15 +998,190 @@ textarea.questions-form__form-control {
     cursor: pointer;
     width: 100%;
     font-weight: 400;
-    transition: background-color 0.3s;
+    transition: opacity 0.3s;
     margin-top: 20px;
 }
 
 .questions-form__btn:hover {
-    background-color: #2980b9;
+  opacity: .7;
+
 }
 
 /* ---- /Блок Часто задаваемы вопросы ----- */
+
+/* ----------- ПОПАП -------- */
+
+.popup {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  object-fit: cover;
+  display: none;
+}
+
+.popup__container {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  text-align: left;
+  background-color: #fff;
+  width: 430px;
+  border-radius: 10px;
+}
+
+.popup__title {
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  text-align: left;
+  max-width: 358px;
+  margin: 0 auto;
+}
+
+.popup__container-form {
+    margin: 0 auto;
+    padding-top: 34px;
+}
+
+@media screen and (max-width: 767px) {
+    
+
+    
+}
+
+.popup__save-button {
+  border: 1px solid #000;
+  color: #fff;
+  background-color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  height: 50px;
+  width: 358px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 0 auto 37px;
+}
+
+.popup__form {
+  color: #000;
+  max-width: 358px;
+  margin: 0 auto;
+}
+
+.popup__form-name {
+  border-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  width: 100%;
+  margin: 48px 0 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 0 13px 0;
+  outline: none;
+}
+
+.popup__form-job {
+  border-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  width: 100%;
+  font-size: 14px;
+  line-height: 16.94px;
+  padding: 0 0 13px 0;
+  outline: none;
+  margin: 30px 0 54px;
+}
+
+.popup__button-exit {
+  background-image: url('../images/header-slogan-image-tg.svg');
+  background-size: cover;
+  position: absolute;
+  border: none;
+  top: -41px;
+  right: -34px;
+  background-color: transparent;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+
+.popup__button-exit:hover {
+  opacity: .6;
+}
+
+.popup__save-button:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__container {
+    max-width: 282px;
+  }
+
+  .popup__title {
+    font-size: 18px;
+    line-height: 21.78px;
+  }
+
+  .popup__container-form {
+    max-width: 238px;
+    padding-top: 25px;
+  }
+
+  .popup_opened {
+    display: flex;
+  }
+
+  .popup__button-exit {
+    top: -36px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .popup__save-button {
+    margin: 0 auto 25px;
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 238px;
+  }
+
+  .popup__form-name {
+    margin: 75px 0 0;
+    max-width: 238px;
+  }
+
+  .popup__form-job {
+    margin: 30px 0 45px;
+  }
+}
+/* ----------- /ПОПАП -------- */
+
+
+
+.popup__form-feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* position: fixed; */
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 24px;
+  max-width: 1262px;
+  min-height: 526px;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+}
 
 /* --------- Подвал ------- */
 
@@ -1011,8 +1192,8 @@ textarea.questions-form__form-control {
     height: 100%;
 }
 
-.footer__block {
-    padding-top: 64px;
+.container.footer__block {
+    padding: 64px 20px 0;
 }
 
 .footer__block h2 {

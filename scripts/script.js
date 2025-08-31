@@ -143,3 +143,27 @@ document.getElementById('phone').addEventListener('input', function(e) {
   
   e.target.value = value;
 });
+
+// ----- Чекбокс в форме
+
+$(".check-label").on("click", function () {
+    let isChecked = $(this).find("input").prop("checked");
+    if (isChecked) {
+        $(this).find(".fakecheck").addClass("checked");
+    } else {
+        $(this).find(".fakecheck").removeClass("checked");
+    }
+});
+
+// $(document).on('mouseenter', 'form input[type="submit"]', function () {
+//     var $form = $(this).closest('form');
+//     var $fakecheck = $form.find('.fakecheck');
+
+//     if ($fakecheck.hasClass('checked')) {
+//         $fakecheck.removeClass('error');
+//     } else {
+//         $fakecheck.addClass('error');
+//     }
+// });
+
+// ----- /Чекбокс в форме

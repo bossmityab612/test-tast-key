@@ -42,7 +42,7 @@
           <li><a href="#">Комплексы</a></li>
           <li><a href="#">Онлайн-экскурсия</a></li>
         </ul>
-        <button class="button">Получить инвестиционный расчет</button>
+        <button class="button open-popup-btn">Получить инвестиционный расчет</button>
       </div>
       <div class="burger">
         <div class="burger__block">
@@ -572,20 +572,97 @@
       </div>
     </section>
 
-    <div class="popup">
-        <div class="popup__container">
-            <button type="button" class="popup__button-exit"></button>
-            <div class="popup__container-form">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <form action="popup" name="popup-form" class="popup__form">
-                    <input name="name" type="text" placeholder="Имя" class="popup__form-name">
-                    <input name="job" type="text" placeholder="О себе" class="popup__form-job">
-                    <button name="button" type="submit" class="popup__save-button">Сохранить</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    
+    <!-- Кнопка для открытия попапа -->
+    <button class="open-popup-btn">Open Popup</button>
 
+    <!-- Сам попап -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-bgc-image">
+        <img src="./images/popup-bgc-photo.png" alt="">
+        <div class="popup-content">
+          <div class="popup-header">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" max-width="37" width="100%" height="26" viewBox="0 0 37 26" fill="none">
+                <path d="M25.4404 6.06323V12.4861C25.4395 12.4973 25.4282 12.7702 25.4746 13.157C25.5226 13.5561 25.6338 14.0957 25.8896 14.655V14.656C26.3709 15.7189 27.4646 17.0067 29.8154 17.3279L29.835 17.3308L29.8555 17.3318L30.1182 17.3464L30.1318 17.3474H30.9648L30.9785 17.3464L31.2412 17.3318L31.2607 17.3308L31.2812 17.3279C33.4832 17.0265 34.5766 15.8712 35.1035 14.8582L35.2021 14.658C35.4588 14.0957 35.5702 13.5519 35.6182 13.1521C35.6423 12.9512 35.651 12.7833 35.6533 12.6638C35.6545 12.6043 35.654 12.5565 35.6533 12.5222C35.653 12.505 35.6528 12.4904 35.6523 12.4802C35.6522 12.4755 35.6515 12.4716 35.6514 12.4685V6.06714H35.752V6.11011H35.7607C35.7679 8.47627 35.7766 11.8709 35.7598 12.8123V12.823C35.7634 14.0181 35.7705 16.0288 35.7705 19.2048C35.7705 21.7536 34.6678 23.0676 33.6045 23.7654C33.0608 24.1221 32.5132 24.3253 32.1006 24.4392C31.8952 24.4959 31.7255 24.5301 31.6094 24.5496C31.5514 24.5593 31.507 24.5656 31.4785 24.5691C31.4704 24.5701 31.4635 24.5704 31.458 24.571H25.3477V24.5203H26.3516C26.4607 24.5204 26.6631 24.5211 27.0186 24.5212H31.5381L31.5889 24.5105C33.7679 24.0527 34.8204 22.7106 35.3076 21.4851C35.5476 20.8815 35.6502 20.3101 35.6934 19.8914C35.715 19.6813 35.7222 19.5072 35.7236 19.3835C35.7243 19.3219 35.7236 19.2723 35.7227 19.2371C35.7223 19.2247 35.721 19.2136 35.7207 19.2048V14.3933L34.8223 15.5798C34.6036 15.8686 34.3333 16.1375 33.998 16.3611L33.8506 16.4539C33.1596 16.8653 32.6735 17.0785 32.2822 17.2009C31.8923 17.3229 31.5782 17.3616 31.1973 17.407H31.1904L31.1895 17.408C31.1165 17.4167 31.0263 17.4275 30.9346 17.4402H30.1904L30.0986 17.4294L29.9121 17.407H29.9131C29.531 17.3615 29.2146 17.3233 28.8232 17.2009C28.4306 17.0781 27.9439 16.8646 27.2529 16.4539C26.4478 15.9748 25.9773 15.2348 25.7021 14.5349C25.4268 13.8343 25.361 13.2068 25.3467 13.0105V13.0095L25.333 12.0847C25.3302 11.5815 25.3289 10.9119 25.3291 10.1609C25.3295 8.84298 25.335 7.3055 25.3398 6.06323H25.4404ZM26.666 24.0203C26.6499 24.0801 26.6285 24.1361 26.6025 24.1873C26.6157 24.1342 26.626 24.0784 26.6279 24.0203C26.6403 24.0203 26.653 24.0203 26.666 24.0203Z" stroke="#D7C2AB"/>
+                <path d="M16.3089 17.4164C18.597 17.4164 20.6009 16.1703 21.6794 14.323H20.4078C19.4642 15.5581 17.9776 16.3561 16.3052 16.3561C13.6418 16.3561 11.4447 14.3303 11.1751 11.7397C19.7265 11.7361 22.4956 11.7251 22.4956 11.7251C22.4956 11.7251 22.4956 11.7179 22.4956 11.7106H22.4992C22.5138 11.543 22.5211 11.3717 22.5211 11.1968C22.5211 7.76825 19.7301 4.97729 16.3016 4.97729C12.873 4.97729 10.082 7.76825 10.082 11.1968C10.082 14.6254 12.873 17.4164 16.3016 17.4164H16.3089ZM16.3089 6.03757C18.9978 6.03757 21.2094 8.10345 21.4462 10.7341H11.1715C11.4083 8.10709 13.6199 6.03757 16.3089 6.03757Z" fill="url(#paint0_linear_2_287)"/>
+                <path d="M1.22059 11.3353L8.0996 17.256H9.69911L2.56141 11.0693L9.09428 5.10847H7.5895L1.2133 10.8033C1.20601 3.39964 1.19508 0.929321 1.19508 0.929321H0V17.2743H1.21694C1.21694 15.0225 1.21694 13.055 1.21694 11.3389L1.22059 11.3353Z" fill="url(#paint1_linear_2_287)"/>
+                <defs>
+                  <linearGradient id="paint0_linear_2_287" x1="106.137" y1="-42.9973" x2="-171.913" y2="124.763" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F5E5D5"/>
+                    <stop offset="0.12" stop-color="#F3E2D2"/>
+                    <stop offset="0.2" stop-color="#ECDBC9"/>
+                    <stop offset="0.26" stop-color="#E2CFBA"/>
+                    <stop offset="0.32" stop-color="#D3BEA5"/>
+                    <stop offset="0.38" stop-color="#C0A88A"/>
+                    <stop offset="0.43" stop-color="#A88E69"/>
+                    <stop offset="0.45" stop-color="#A0845D"/>
+                    <stop offset="0.46" stop-color="#937955"/>
+                    <stop offset="0.5" stop-color="#826B4C"/>
+                    <stop offset="0.54" stop-color="#766145"/>
+                    <stop offset="0.61" stop-color="#6F5B42"/>
+                    <stop offset="0.78" stop-color="#6E5A41"/>
+                    <stop offset="0.84" stop-color="#715D43"/>
+                    <stop offset="0.9" stop-color="#7D664B"/>
+                    <stop offset="0.96" stop-color="#907658"/>
+                    <stop offset="1" stop-color="#A18464"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_2_287" x1="102.147" y1="-49.6103" x2="-175.903" y2="118.153" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F5E5D5"/>
+                    <stop offset="0.12" stop-color="#F3E2D2"/>
+                    <stop offset="0.2" stop-color="#ECDBC9"/>
+                    <stop offset="0.26" stop-color="#E2CFBA"/>
+                    <stop offset="0.32" stop-color="#D3BEA5"/>
+                    <stop offset="0.38" stop-color="#C0A88A"/>
+                    <stop offset="0.43" stop-color="#A88E69"/>
+                    <stop offset="0.45" stop-color="#A0845D"/>
+                    <stop offset="0.46" stop-color="#937955"/>
+                    <stop offset="0.5" stop-color="#826B4C"/>
+                    <stop offset="0.54" stop-color="#766145"/>
+                    <stop offset="0.61" stop-color="#6F5B42"/>
+                    <stop offset="0.78" stop-color="#6E5A41"/>
+                    <stop offset="0.84" stop-color="#715D43"/>
+                    <stop offset="0.9" stop-color="#7D664B"/>
+                    <stop offset="0.96" stop-color="#907658"/>
+                    <stop offset="1" stop-color="#A18464"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <h2>Ключ к лучшей недвижимости Крыма!</h2>
+            </div>
+            <span class="popup-close">&times;</span>
+          </div>
+            
+          <div class="popup-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <div class="divider"></div>
+            
+            <h3>Как к вам обращаться?</h3>
+            
+            <form class="popup-form">
+              <div class="form-group">
+                <input type="text" placeholder="Имя Отчество" required>
+              </div>
+                
+              <div class="form-group">
+                <input type="tel" placeholder="+7 (978) 123-12-13" required>
+              </div>
+              
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" required>
+                  <span class="checkmark"></span>
+                  Я согласен на обработку персональных данных
+                </label>
+              </div>
+                
+              <button type="submit" class="submit-btn">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -622,7 +699,7 @@
 
       <div class="footer__block-navigation">
         <div class="footer__block-navigation-list">
-          <h3>Карта сайта</h3>
+          <h3>КАРТА САЙТА</h3>
           <ul>
             <li><a href="#">О компании</a></li>
             <li><a href="#">Команда</a></li>

@@ -1,23 +1,101 @@
-const popup = document.querySelector('.popup'); //Всплывающее окно
-const openPopupButton = document.querySelector('.button'); //Кнопка открытия попапа
-const closePopupButton = document.querySelector('.popup__button-exit'); //Кнопка закрытия попапа
-
 // ------ Попап окно обратной связи
 
-// Открытие и закрытие попапа
-openPopupButton.addEventListener('click', () => {
-	popup.classList.add('popup_opened');
-	nameForm.value = nameInput.textContent;
-	jobForm.value = jobInput.textContent;
-});
+// const popup = document.querySelector('.popup'); //Всплывающее окно
+// const openPopupButton = document.querySelector('.profile__button-edit'); //Кнопка открытия попапа
+// const closePopupButton = document.querySelector('.popup__button-exit'); //Кнопка закрытия попапа
 
-closePopupButton.addEventListener('click', () => {
-  popup.classList.remove('popup_opened');
-});
+// openPopupButton.addEventListener('click', () => {
+// 	popup.classList.add('popup_opened');
+// 	nameForm.value = nameInput.textContent;
+// 	jobForm.value = jobInput.textContent;
+// });
+
+// closePopupButton.addEventListener('click', () => {
+//   popup.classList.remove('popup_opened');
+// });
+
+// // Обработчик формы изменения профиля
+// function formSubmitHandler(evt) {
+// 	evt.preventDefault();
+// 	nameInput.textContent = nameForm.value;
+// 	jobInput.textContent = jobForm.value;
+	
+// 	popup.classList.remove('popup_opened');
+// }
+// popupForm.addEventListener('submit', formSubmitHandler);
+
+// console.log(openPopupButton());
 
 // ------ /Попап окно обратной связи
 
 // ---------- Бургер
+
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('popup');
+    const openBtn = document.querySelector('.open-popup-btn');
+    const closeBtn = document.querySelector('.popup-close');
+    const form = document.querySelector('.popup-form');
+
+    // Открытие попапа
+    openBtn.addEventListener('click', function() {
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Закрытие попапа
+    function closePopup() {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+
+    // Закрытие по клику вне контента
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closePopup();
+        }
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup.style.display === 'flex') {
+            closePopup();
+        }
+    });
+
+    // Обработка формы
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Валидация формы
+        const inputs = form.querySelectorAll('input[required]');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.style.borderColor = 'red';
+            } else {
+                input.style.borderColor = '#e0e0e0';
+            }
+        });
+
+        if (isValid) {
+            // Здесь можно отправить данные на сервер
+            alert('Заявка успешно отправлена!');
+            closePopup();
+            form.reset();
+        }
+    });
+
+    // Валидация телефона
+    const phoneInput = form.querySelector('input[type="tel"]');
+    phoneInput.addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/[^\d+()-\s]/g, '');
+    });
+});
+
 
 $(document).ready(function() {
   $(document).ready(function() {

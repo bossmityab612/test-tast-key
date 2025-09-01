@@ -24,6 +24,7 @@ body {
     width: 100%;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }   
 
 .container {
@@ -563,6 +564,7 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
     gap: 32px;   
+    z-index: 0;
 }
 
 .object-model__cards-item {
@@ -1011,177 +1013,236 @@ textarea.questions-form__form-control {
 
 /* ----------- ПОПАП -------- */
 
-.popup {
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  background-color: rgba(0, 0, 0, .5);
-  width: 100%;
-  height: 100%;
+
+.open-popup-btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.open-popup-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Стили для overlay */
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  object-fit: cover;
-  display: none;
-}
-
-.popup__container {
-  margin: 0 auto;
-  position: relative;
-  display: block;
-  text-align: left;
-  background-color: #fff;
-  width: 430px;
-  border-radius: 10px;
-}
-
-.popup__title {
-  font-size: 24px;
-  line-height: 29.05px;
-  font-weight: 900;
-  text-align: left;
-  max-width: 358px;
-  margin: 0 auto;
-}
-
-.popup__container-form {
-    margin: 0 auto;
-    padding-top: 34px;
-}
-
-@media screen and (max-width: 767px) {
-    
-
-    
-}
-
-.popup__save-button {
-  border: 1px solid #000;
-  color: #fff;
-  background-color: #000;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.78px;
-  height: 50px;
-  width: 358px;
-  border-radius: 2px;
-  cursor: pointer;
-  margin: 0 auto 37px;
-}
-
-.popup__form {
-  color: #000;
-  max-width: 358px;
-  margin: 0 auto;
-}
-
-.popup__form-name {
-  border-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  width: 100%;
-  margin: 48px 0 0 0;
-  font-size: 14px;
-  line-height: 17px;
-  padding: 0 0 13px 0;
-  outline: none;
-}
-
-.popup__form-job {
-  border-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  width: 100%;
-  font-size: 14px;
-  line-height: 16.94px;
-  padding: 0 0 13px 0;
-  outline: none;
-  margin: 30px 0 54px;
-}
-
-.popup__button-exit {
-  background-image: url('../images/header-slogan-image-tg.svg');
-  background-size: cover;
-  position: absolute;
-  border: none;
-  top: -41px;
-  right: -34px;
-  background-color: transparent;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-}
-
-
-.popup__button-exit:hover {
-  opacity: .6;
-}
-
-.popup__save-button:hover {
-  opacity: .8;
-}
-
-@media screen and (max-width: 767px) {
-  .popup__container {
-    max-width: 282px;
-  }
-
-  .popup__title {
-    font-size: 18px;
-    line-height: 21.78px;
-  }
-
-  .popup__container-form {
-    max-width: 238px;
-    padding-top: 25px;
-  }
-
-  .popup_opened {
-    display: flex;
-  }
-
-  .popup__button-exit {
-    top: -36px;
-    right: 0;
-    width: 20px;
-    height: 20px;
-  }
-
-  .popup__save-button {
-    margin: 0 auto 25px;
-    font-size: 14px;
-    line-height: 22px;
-    max-width: 238px;
-  }
-
-  .popup__form-name {
-    margin: 75px 0 0;
-    max-width: 238px;
-  }
-
-  .popup__form-job {
-    margin: 30px 0 45px;
-  }
-}
-/* ----------- /ПОПАП -------- */
-
-
-
-.popup__form-feedback {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* position: fixed; */
-  border: 1px solid #000;
-  background-color: #fff;
-  border-radius: 24px;
-  max-width: 1262px;
-  min-height: 526px;
   width: 100%;
   height: 100%;
-  z-index: 100000;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
 }
+
+.popup-content {
+  background: linear-gradient(152deg, #0C232D 0%, #001220 100%);
+  border-radius: 15px;
+  max-width: 1262px;
+  max-height: 526px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: popupFadeIn 0.3s ease;
+}
+
+.popup-bgc-image {
+  position: relative;
+}
+
+.popup-bgc-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 424px;
+  max-height: 506px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.popup-header {
+  color: white;
+  padding: 25px;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+
+.popup-header div {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid #000; */
+  align-items: center;
+  justify-content: space-between;
+  max-width: 260px;
+  min-height: 48px;
+  width: 100%;
+  height: 100%;
+  gap: 16px;
+}
+
+.popup-header h2 {
+  font-size: 18px;
+  margin: 0;
+  border-left: 1px solid #fff;
+  height: 100%;
+  padding-left: 16px;
+  font-family: var(--rubik);
+  font-weight: 100;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.popup-close:hover {
+    transform: rotate(90deg);
+}
+
+.popup-body {
+    padding: 25px;
+}
+
+.popup-body p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ddd, transparent);
+    margin: 25px 0;
+}
+
+.popup-body h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.checkbox-group {
+    margin: 25px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input:checked + .checkmark {
+    background: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .popup-header {
+        padding: 20px;
+    }
+    
+    .popup-header h2 {
+        font-size: 18px;
+    }
+    
+    .popup-body {
+        padding: 20px;
+    }
+}
+
+/* ----------- /ПОПАП -------- */
+
 
 /* --------- Подвал ------- */
 
@@ -1220,18 +1281,20 @@ textarea.questions-form__form-control {
 }
 
 .footer__connection button {
-    max-width: 355px;
-    min-height: 64px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #F5E5D5;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
+  max-width: 355px;
+  min-height: 64px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5E5D5;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #121E2A;
+  background-image: linear-gradient(152deg, rgba(245, 229, 213, 1) 0%, rgba(110, 90, 65, 1) 100%);
 }
 
 .footer__contacts-block {
@@ -1248,21 +1311,24 @@ textarea.questions-form__form-control {
 }
 
 .footer__contacts-block-item {
-    max-width: 356px;
-    width: 100%;
-    border-radius: 24px;
-    background-color: #F5E5D5;
-    padding: 24px;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  max-width: 356px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 24px;
+  color: #fff;
+  font-family: var(--rubik);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(245, 229, 213, .3);;
 }
+
 
 .footer__block li h4 {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 100;
 }
 .footer__block li p {
     margin: 0;
@@ -1320,6 +1386,8 @@ textarea.questions-form__form-control {
     font-weight: 100;
     padding: 0;
     margin: 0 0 24px 0;
+    font-family: var(--poiret-one);
+    
 }
 
 .footer__block-navigation-list ul {
@@ -1343,25 +1411,25 @@ textarea.questions-form__form-control {
 }
 
 .footer__block-navigation-buttons {
-    display: flex;
-    flex-direction: column;
-    max-width: 615px;
-	width: 100%;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  max-width: 615px;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .footer__block-navigation-buttons button {
-    border: 1px solid #fff;
-    min-height: 64px;
+  border: 1px solid #fff;
+  min-height: 64px;
 	display: flex;
 	flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 	border-radius: 35px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #fff;
-    margin-bottom: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #F5E5D5;
+  margin-bottom: 8px;
 }
 
 .footer__block-navigation-buttons button:nth-child(2n){

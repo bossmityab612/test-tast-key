@@ -32,17 +32,19 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('popup');
-    const openBtn = document.querySelector('.open-popup-btn');
+    const openBtns = document.querySelectorAll('.open-popup-btn');
     const closeBtn = document.querySelector('.popup-close');
     const form = document.querySelector('.popup-form');
 
-    // Открытие попапа
-    openBtn.addEventListener('click', function() {
-        popup.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+    // Открытие попапа для всех кнопок
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
     });
 
-    // Закрытие попапа
+    // Остальной код без изменений...
     function closePopup() {
         popup.style.display = 'none';
         document.body.style.overflow = '';
@@ -50,25 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeBtn.addEventListener('click', closePopup);
 
-    // Закрытие по клику вне контента
     popup.addEventListener('click', function(e) {
         if (e.target === popup) {
             closePopup();
         }
     });
 
-    // Закрытие по Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && popup.style.display === 'flex') {
             closePopup();
         }
     });
 
-    // Обработка формы
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Валидация формы
         const inputs = form.querySelectorAll('input[required]');
         let isValid = true;
 
@@ -82,17 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (isValid) {
-            // Здесь можно отправить данные на сервер
             alert('Заявка успешно отправлена!');
             closePopup();
             form.reset();
         }
-    });
-
-    // Валидация телефона
-    const phoneInput = form.querySelector('input[type="tel"]');
-    phoneInput.addEventListener('input', function(e) {
-        e.target.value = e.target.value.replace(/[^\d+()-\s]/g, '');
     });
 });
 

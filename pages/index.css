@@ -1013,14 +1013,12 @@ textarea.questions-form__form-control {
 
 /* ----------- ПОПАП -------- */
 
-
 .open-popup-btn {
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .open-popup-btn:hover {
-  background: #45a049;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -1036,8 +1034,6 @@ textarea.questions-form__form-control {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
 }
 
 .popup-content {
@@ -1047,37 +1043,28 @@ textarea.questions-form__form-control {
   max-height: 526px;
   width: 100%;
   height: 100%;
+  position: relative;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   animation: popupFadeIn 0.3s ease;
 }
 
-.popup-bgc-image {
-  position: relative;
-}
-
-.popup-bgc-image img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 424px;
-  max-height: 506px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-
-}
-
 @keyframes popupFadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9) translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup-overlay img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: clamp(424px * var(--coefficient), 424 * 100vw / var(--design-width) * var(--mobile-coefficient), 424px * var(--mobile-coefficient));
 }
 
 .popup-header {
@@ -1090,7 +1077,6 @@ textarea.questions-form__form-control {
 .popup-header div {
   display: flex;
   flex-direction: row;
-  /* border: 1px solid #000; */
   align-items: center;
   justify-content: space-between;
   max-width: 260px;
@@ -1111,134 +1097,172 @@ textarea.questions-form__form-control {
 }
 
 .popup-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(152deg, #F5E5D5 0%, #6E5A41 100%);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .popup-close:hover {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
+
 .popup-body {
-    padding: 25px;
+  padding: 0;
+  margin: 0 48px 48px;
+  max-width: 774px;
+  width: 100%;
 }
 
 .popup-body p {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 16px;
+  color: #fff;
+  margin: 0;
+  font-size: 21px;
+  font-weight: 100;
 }
 
-.divider {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ddd, transparent);
-    margin: 25px 0;
+.popup-body p:first-child {
+  font-size: 28px;
 }
 
 .popup-body h3 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 18px;
+  color: #333;
+  font-size: 18px;
+  color: #fff;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-group-block-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 379px;
+  width: 100%;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-family: var(--rubik);
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.popup-field-button {
+  background-color: #F5E5D5;
+  max-width: 379px;
+  min-height: 64px;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  border: none;
 }
 
 .form-group input:focus {
-    outline: none;
-    border-color: #667eea;
+  outline: none;
+}
+
+.checkbox-button {
+  display: flex;
+  justify-content: space-between;
 }
 
 .checkbox-group {
-    margin: 25px 0;
+  margin: 25px 0;
 }
 
 .checkbox-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 14px;
-    color: #666;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
 }
 
 .checkbox-label input {
-    display: none;
+  display: none;
 }
 
 .checkmark {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.checkbox-label input:checked + .checkmark {
-    background: #4CAF50;
-    border-color: #4CAF50;
-}
-
-.checkbox-label input:checked + .checkmark::after {
-    content: '✓';
-    position: absolute;
-    color: white;
-    font-size: 14px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .submit-btn {
-    width: 100%;
-    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: linear-gradient(152deg, #F5E5D5 0%, #6E5A41 100%);
+  color: #121E2A;
+  font-family: var(--rubik);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.checkbox-button .fakecheck {
+  border: 1px solid #fff;
+}
+
+.checkbox-button .check-label a {
+  color: #fff;
+  font-size: 22px;
+  display: block;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .popup-content {
-        width: 95%;
-        margin: 20px;
-    }
-    
-    .popup-header {
-        padding: 20px;
-    }
-    
-    .popup-header h2 {
-        font-size: 18px;
-    }
-    
-    .popup-body {
-        padding: 20px;
-    }
+  .popup-content {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .popup-header {
+    padding: 20px;
+  }
+  
+  .popup-header h2 {
+    font-size: 18px;
+  }
+  
+  .popup-body {
+    padding: 20px;
+  }
 }
 
 /* ----------- /ПОПАП -------- */

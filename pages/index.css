@@ -292,22 +292,44 @@ h1 {
     display: inline-block;
 }
 
-.intro__button-block button:last-child::before {
-    color: #F5E5D5;
-    border: 1px solid #F5E5D5;
-
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    transform: translate(-50%, -50%);
-    background: rgba(245, 229, 213, 0.1);
-    backdrop-filter: blur(16px);
-    z-index: -1;
-    border-radius: 35px;
+.intro__button-block button:last-child {
+  background: transparent;
+  backdrop-filter: blur(16px);
+  z-index: 0;
+  border: 1px solid #F5E5D5;
+  border-radius: 35px;
+  color: #fff;
 }
+
+/* .intro__button-block {
+  position: relative;
+  display: inline-block;
+}
+
+.intro__button-block button:first-child {
+  padding: 20px 48px;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #121E2A;
+  font-family: var(--rubik);
+  background: linear-gradient(152deg, rgba(245, 229, 213, 1) 0%, rgba(110, 90, 65, 1) 100%);
+  transition: all .2s ease-in;
+  position: relative;
+  z-index: 2;
+} */
+
+/* .intro__button-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 35px;
+  z-index: 1;
+} */
 
 .intro__button-block button:hover {
     background: linear-gradient(#6E5A41 0%, #6E5A41 100%);
@@ -347,6 +369,10 @@ h1 {
     max-width: 308px;
     width: 100%;
     text-align: center;
+}
+
+.intro__target-audience-list.mobile {
+  display: none;
 }
 
 /* ------- Блок Причины ------- */
@@ -1618,17 +1644,23 @@ textarea.questions-form__form-control {
 
 	.intro__button-block {
 		flex-direction: column;
-	}
+  }
+  
+  .intro__target-audience-list {
+    display: none;
+  }
 
-	.intro__target-audience-list {
-		flex-direction: column;
-		padding-bottom: 20px;
-	}
+  .intro__target-audience-list.mobile li {
+    border-radius: 24px;
+    gap: 8px;
+    box-shadow: 0px 0px 20px 0px rgba(18, 30, 42, 0.1215686275);
+  }
 
-	.intro__target-audience-list li {
-		border-radius: 24px;
-		gap: 8px;
-	}
+  .intro__target-audience-list.mobile {
+    display: flex;
+    flex-direction: column;
+    margin: -85px 0 0 0;
+  }
 
 	.object-model__block ul {
 		display: none;
@@ -1734,13 +1766,29 @@ textarea.questions-form__form-control {
     height: 34px;
   }
 
+  .footer__connection {
+    flex-direction: column;
+  }
+
 	.footer__contacts-block {
 		flex-direction: column;
 	}
 
 	.footer__contacts-block-item {
 		min-height: 152px;
+    max-width: 100%;
 	}
+  
+    .footer__block-navigation {
+      flex-direction: column;
+    }
+
+  .footer__block-navigation-buttons button {
+    background: linear-gradient(152deg, rgba(245, 229, 213, 1) 0%, rgba(110, 90, 65, 1) 100%);
+    background: rgba(245, 229, 213, .1);
+    backdrop-filter: blur(16px);
+    font-family: var(--rubik);
+  }
 }
 
 

@@ -226,6 +226,10 @@ h2 {
 	display: none;
 }
 
+.burger-main-block {
+  display: none;
+}
+
 /* -------- /Бургер ------- */
 
 /* ---------- Блок Интро ----------- */
@@ -1060,6 +1064,7 @@ textarea.questions-form__form-control {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 100000;
 }
 
 .popup-content {
@@ -1143,12 +1148,12 @@ textarea.questions-form__form-control {
   transform: rotate(90deg);
 }
 
-
 .popup-body {
   padding: 0;
   margin: 0 48px 48px;
   max-width: 774px;
   width: 100%;
+  position: relative;
 }
 
 .popup-body p {
@@ -1542,41 +1547,50 @@ textarea.questions-form__form-control {
 
 @media screen and (max-width: 930px) {
 
-    .header__block-info button {
-      max-width: 233px;
-    }
+  .header__block-info button {
+    max-width: 233px;
+  }
 
-    .header {
-      min-height: 96px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
+  .header {
+    min-height: 96px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+  }
 
-    .header__block-info {
-      max-width: 204px;
-      min-height: 36px;
-    }
+  .header__block-info {
+    max-width: 204px;
+    min-height: 36px;
+  }
 
-    .header__block {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+  .header__block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
 	.burger {
 		display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 50%;
-      max-width: 48px;
-      min-height: 48px;
-      width: 100%;
-      height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    max-width: 48px;
+    min-height: 48px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
 	}
+
+  .burger-main-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #121E2A;
+  }
     
 	.header__block-info button {
 		display: none;	
@@ -1601,10 +1615,10 @@ textarea.questions-form__form-control {
 }
 
 @media screen and (max-width: 820px) {
-    .questions__block-list-form {
-      flex-direction: column;
-      align-items: center;
-    }
+  .questions__block-list-form {
+    flex-direction: column;
+    align-items: center;
+  }
     
 	.footer__contacts-block-item {
 		padding: 16px;
@@ -1623,7 +1637,7 @@ textarea.questions-form__form-control {
 
 	h2 {
 		font-size: 24px;
-    }
+  }
 	
 	.header__block-logo-slogan img {
 		max-width: 36px;
@@ -1639,7 +1653,7 @@ textarea.questions-form__form-control {
 	}
 
 	.intro {
-    	border-radius: 0;
+    border-radius: 0;
 	}
 
 	.intro__button-block {

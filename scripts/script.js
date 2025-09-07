@@ -76,7 +76,8 @@ const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  mousewheel: true,
+  // mousewheel: true, 
+  // followFinger: true,
 
   // If we need pagination
   pagination: {

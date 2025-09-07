@@ -1,7 +1,7 @@
 // ------ Попап окно обратной связи
 
 document.addEventListener('DOMContentLoaded', function() {
-  const popup = document.getElementById('popup');
+  const popup = document.querySelector('.popup');
   const openBtns = document.querySelectorAll('.open-popup-btn');
   const closeBtn = document.querySelector('.popup-close');
   const form = document.querySelector('.popup-form');
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Остальной код без изменений...
   function closePopup() {
     popup.style.display = 'none';
     document.body.style.overflow = '';
@@ -56,6 +55,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// ------ //Попап окно обратной связи
+
+// ------ Попап окно Карточки товара
+
+const popupAddForm = document.querySelector('.card-product'); //Всплывающее окно
+const openPopupButtonAddForm = document.querySelector('.object-model__cards-button'); //Кнопка открытия попапа
+const closePopupButtonAddForm = document.querySelector('.popup-close'); //Кнопка закрытия попапа
+
+openPopupButtonAddForm.addEventListener('click', () => {
+  popupAddForm.classList.add('popup_opened');
+});
+
+closePopupButtonAddForm.addEventListener('click', () => {
+  popupAddForm.classList.remove('popup_opened');
+});
+// ------ //Попап окно Карточки товара
+
+
+
 // ---------- Бургер
 
 $(document).ready(function() {
@@ -73,10 +91,9 @@ $(document).ready(function() {
 //------ Блок Объектная модель
 
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
   direction: 'horizontal',
   loop: true,
-  // mousewheel: true, 
+  mousewheel: true, 
   // followFinger: true,
 
   // If we need pagination
@@ -91,74 +108,6 @@ const swiper = new Swiper('.swiper', {
   },
 
 });
-
-// После загрузки DOM
-// document.addEventListener('DOMContentLoaded', function() {
-//   const objectModelSwiper = new Swiper('.object-model__slider', {
-//     // autoplay: {
-//     //   delay: 5000,
-//     // },
-//     loop: true,
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-
-//     // observer: true,
-//     // observeParents: true, 
-
-//     pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//     },
-
-//     navigation: {
-//       nextEl: '.object-model__slider .swiper-button-next',
-//       prevEl: '.object-model__slider .swiper-button-prev',
-//     }
-//   });
-
-  // const images = document.querySelectorAll('.object-model__slide');
-  // let loadedImages = 0;
-
-  // images.forEach(img => {
-  //   if (img.complete) {
-  //     checkAllImagesLoaded();
-  //   } else {
-  //     img.addEventListener('load', checkAllImagesLoaded);
-  //   }
-  // });
-
-  // function checkAllImagesLoaded() {
-  //   loadedImages++;
-  //   if (loadedImages === images.length) {
-  //     objectModelSwiper.update(); // Обновляем Swiper
-  //   }
-  // }
-
-  // setTimeout(() => {
-  //   objectModelSwiper.update();
-  //   objectModelSwiper.slideTo(0); // Вернуться к первому слайду
-  // }, 100);
-// });
-
-// ------- Блок Объектная модель
-
-
-// $(document).on('click', '.input-select-items li', function(e) {
-//   const value = $(this).text();
-
-//   $(this).closest('label').find('input').val(value);
-//   $(this).closest('label').find('.input-select-items ul').slideUp();
-// });
-
-// $(document).on('click', '.input-select-btn', function(e) {
-//   $(this).closest('label').find('.input-select-items ul').slideToggle();
-// });
-
-// $(".catalog__selectors button").on("click", function () {
-//   $(".catalog__selectors button").removeClass('active');
-
-//   $(this).addClass('active');
-// });
 
 //------ /Блок Объектная модель
 

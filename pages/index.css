@@ -429,15 +429,16 @@ h1 {
 }
 
 .reasons button {
-    padding: 20px 91px;
-    margin: 32px auto 64px;
-    display: block;  
-    border-radius: 24px;
-    border: none;
-    background-color: #F5E5D5;
-    color: #121E2A;
-    cursor: pointer;
-    transition: all .3s ease-out;
+  padding: 20px 91px;
+  margin: 32px auto 64px;
+  display: block;  
+  border-radius: 24px;
+  border: none;
+  font-family: var(--rubik);
+  color: #121E2A;
+  cursor: pointer;
+  transition: all .3s ease-out;
+  background: linear-gradient(171deg, #F5E5D5 0%, #6E5A41 100%);
 }
 
 
@@ -446,73 +447,77 @@ h1 {
 /* --------- Блок Стратегия -------- */
 
 .strategy {
-    min-height: 808px;
-    height: 100%;
-    width: 100%;
-    background-color: #0C232D;
-    color: #F5E5D5;
+  min-height: 808px;
+  height: 100%;
+  width: 100%;  
+  background: linear-gradient(90deg, #0C232D 55%, #001220 100%);
+  color: #F5E5D5;
 }
 
 .strategy h2 {
-    font-weight: 100;
-    margin: 0;
-    padding-top: 64px;
-    font-family: 'Poiret One', Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding-top: 64px;
+  font-family: 'Poiret One', Arial, Helvetica, sans-serif;
 }
 
 .strategy__block-stages {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 48px 0 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 48px 0 64px;
 }
 
 .strategy__block-stages-text-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 451px;
-    max-width: 485px;
-    width: 100%;
-    height: 100%;
-    margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 451px;
+  max-width: 485px;
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
 }
 
 .strategy__block-stages-text-btn ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 339px;
-    width: 100%;
-    height: 100%;
-    color: #F5E5D5;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: var(--rubik);
-    list-style: none;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 339px;
+  width: 100%;
+  height: 100%;
+  color: #F5E5D5;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: var(--rubik);
+  list-style: none;
+  padding: 0;
 }
 
 .strategy__block-stages-text-btn ul li span:last-child {
-    color: #AFAFAF;
-    font-weight: lighter;
+  color: #AFAFAF;
+  font-weight: lighter;
 }
 
 .strategy__block-stages-text-btn span {
-    display: block;
+  display: block;
 }
 
 .strategy__block-stages-text-btn button {
-    padding: 20px 50px;
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
-    transition: all .3s ease-out;
+  padding: 20px 50px;
+  border-radius: 24px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease-out;
+  font-family: var(--rubik);
+  color: #121E2A;
+  background: linear-gradient(171deg, #F5E5D5 0%, #6E5A41 100%);
 }
 
 .strategy__block-stages img {
-    max-width: 873px;
-    width: 100%;
+  max-width: 873px;
+  width: 100%;
 }
 
 /* -------- /Блок Стратегия ------- */
@@ -520,38 +525,46 @@ h1 {
 /* ------- Блок Объектная модель ------- */
 
 .object-model {
-    min-height: 1180px;
-    height: 100%;
-    width: 100%;
+  min-height: 1180px;
+  height: 100%;
+  width: 100%;
 }
 
 .object-model__block {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .object-model__block h2 {
-    font-weight: 100;
+  font-weight: 100;
 }
 
 .object-model__block ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 48px 0;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 48px 0;
+  padding: 0;
 }
 
 .object-model__block li {
-    list-style: none;
-    font-size: 24px;
-    padding: 12px 18px;
-    margin: 0;
-    border-radius: 16px;
-    color: #121E2A;
-    border: 1px solid #121E2A;
-    cursor: pointer;
+  list-style: none;
+  font-size: 24px;
+  padding: 12px 18px;
+  margin: 0;
+  border-radius: 16px;
+  color: #121E2A;
+  border: 1px solid #121E2A;
+  cursor: pointer;
+  transition: all .3s ease-in;
+  background: transparent;
+
+}
+
+.object-model__block li:hover {
+  background: linear-gradient(90deg, #001220 0%, #0C232D 100%);
+  color: #fff;
 }
 
 .object-model__cards {
@@ -559,7 +572,7 @@ h1 {
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 32px;   
@@ -830,12 +843,12 @@ h1 {
 }
 
 .accordeon__item {
-    border-radius: 30px;
-    color: #F5E5D5;
-    padding: 0 30px;
-    border: none;
-    background-color: #001220;
-    transition: all .3s ease-out;
+  border-radius: 30px;
+  color: #F5E5D5;
+  padding: 0 30px;
+  border: none;
+  background: linear-gradient(152deg, #0C232D 0%, #001220 100%);
+  transition: all .3s ease-out;
 }
 
 .accordeon__item.active .accordeon__header {
@@ -1036,7 +1049,7 @@ textarea.questions-form__form-control {
 }
 
 .questions-form__btn {
-    background-color: #6E5A41;
+    background-color: rgba(110, 90, 65, .7);
     color: #F5E5D5;
     border: none;
     padding: 14px 20px;
@@ -1296,37 +1309,37 @@ textarea.questions-form__form-control {
 /* --------- Подвал ------- */
 
 .footer {
-    background-color: #0C232D;
-    color: #F5E5D5;
-    min-height: 846px;
-    height: 100%;
+  background: linear-gradient(152deg, #001220 0%, #0C232D 100%);
+  color: #F5E5D5;
+  min-height: 846px;
+  height: 100%;
 }
 
 .container.footer__block {
-    padding: 64px 20px 0;
+  padding: 64px 20px 0;
 }
 
 .footer__block h2 {
-    font-weight: 100;
-    margin: 0;
-    padding: 0;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__connection {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 26px 0 48px;
-    font-size: 21px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 26px 0 48px;
+  font-size: 21px;
 }
 
 .footer__connection p {
-    max-width: 407px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: var(--rubik);
+  max-width: 407px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--rubik);
 }
 
 .footer__connection button {
@@ -1347,16 +1360,16 @@ textarea.questions-form__form-control {
 }
 
 .footer__contacts-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 32px;
-    min-height: 175px;
-    height: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 175px;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
 }
 
 .footer__contacts-block-item {
@@ -1369,94 +1382,92 @@ textarea.questions-form__form-control {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(245, 229, 213, .3);;
+  background-color: rgba(245, 229, 213, .3);
 }
-
 
 .footer__block li h4 {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    font-weight: 100;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 100;
 }
 .footer__block li p {
-    margin: 0;
-    padding: 0;
-    font-size: 27px;
+  margin: 0;
+  padding: 0;
+  font-size: 27px;
 }
 
 .footer__connection-mess-block {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 	list-style: none;
 }
 
 .footer__connection-mess-block-item {
-    margin: 0;
-    padding: 0;
-    flex-direction: column-reverse;
-    border-radius: 0;
-    gap: 17px;
+  margin: 0;
+  padding: 0;
+  flex-direction: column-reverse;
+  border-radius: 0;
+  gap: 17px;
 }
 
 .footer__connection-mess-block a {
-    padding: 0;
-    margin: 0;
-    max-width: 64px;
-    max-height: 64px;
-    height: 100%;
-    width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: 64px;
+  max-height: 64px;
+  height: 100%;
+  width: 100%;
 }
 .footer__connection-mess-block img {
-    max-width: 64px;
-    width: 100%;
+  max-width: 64px;
+  width: 100%;
 }
 
 .footer__block-navigation {
-    min-height: 203px;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 32px 0 0 0;
+  min-height: 203px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0 0 0;
 }
 
 .footer__block-navigation-list {
-    max-width: 744px;
-    min-height: 203px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  max-width: 744px;
+  min-height: 203px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer__block-navigation-list h3 {
-    font-size: 32px;
-    font-weight: 100;
-    padding: 0;
-    margin: 0 0 24px 0;
-    font-family: var(--poiret-one);
-    
+  font-size: 32px;
+  font-weight: 100;
+  padding: 0;
+  margin: 0 0 24px 0;
+  font-family: var(--poiret-one);
 }
 
 .footer__block-navigation-list ul {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 	max-width: 511px;
 	max-height: 121px;
-    height: 100%;
-    width: 100%;
-    flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
 	list-style: none;
 }
 
 .footer__block-navigation-list li {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    border-radius: 0%;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0%;
 }
 
 .footer__block-navigation-buttons {
@@ -1482,81 +1493,86 @@ textarea.questions-form__form-control {
 }
 
 .footer__block-navigation-buttons button:nth-child(2n){
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .footer__block-navigation-buttons a {
-    color: #fff;
-    margin-top: 28px;
-    align-self: flex-end;
+  color: #fff;
+  margin-top: 28px;
+  align-self: flex-end;
 }
 
 .footer__block-navigation-list a {
-    text-decoration: none;
-    color: #F5E5D5;
+  text-decoration: none;
+  color: #F5E5D5;
 }
 
 .footer__bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-top: 1px solid #F5E5D5;
-    margin: 32px 0 0 0;
-    padding-top: 32px;
-    color: #fff;
-    font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #F5E5D5;
+  margin: 32px 0 0 0;
+  padding-top: 32px;
+  color: #fff;
+  font-size: 24px;
 }
 
 .footer__bottom span {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* --------- /Подвал ------- */
 
 @media screen and (max-width: 1520px) {
-    .container {
-      padding: 0 20px;
-    }
-    
-    .header__block-list {
-      gap: 20px;
-      padding-bottom: 16px;
-    }
-    
-    .object-model__cards {
-      gap: 20px;
-    }    
+  .container {
+    padding: 0 20px;
+  }
+  
+  .header__block-list {
+    gap: 20px;
+    padding-bottom: 16px;
+  }
+  
+  .object-model__cards {
+    gap: 20px;
+  }    
 
-    .intro__target-audience-list {
-      gap: 20px;
-      align-items: center;
-    }
+  .strategy__block-stages {
+    gap: 20px;
+  }
+
+  .intro__target-audience-list {
+    gap: 20px;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 1220px) {
-    .header__block-logo-slogan p {
-      font-size: 14px;
-    }
+  .header__block-logo-slogan p {
+    font-size: 14px;
+  }
 
-    .header__block-info button {
-      max-width: 370px;
-    }
-    
-    .intro__header-block {
-      max-width: 970px;
-    }
-    
-    .strategy__block-stages {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-    }
-    
-    .object-model__cards {
-      gap: 20px;
-    }
+  .header__block-info button {
+    max-width: 370px;
+  }
+  
+  .intro__header-block {
+    max-width: 970px;
+  }
+  
+  .strategy__block-stages {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .object-model__cards {
+    gap: 20px;
+    justify-content: center;
+  }
 } 
 
 @media screen and (max-width: 930px) {
@@ -1872,9 +1888,9 @@ textarea.questions-form__form-control {
     max-width: 100%;
 	}
   
-    .footer__block-navigation {
-      flex-direction: column;
-    }
+  .footer__block-navigation {
+    flex-direction: column;
+  }
 
   .footer__block-navigation-buttons button {
     background: linear-gradient(152deg, rgba(245, 229, 213, 1) 0%, rgba(110, 90, 65, 1) 100%);

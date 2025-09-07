@@ -586,86 +586,55 @@ h1 {
 }
 
 .object-model__cards {
-    min-height: 694px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 32px;   
-    z-index: 0;
+  min-height: 694px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;   
+  z-index: 0;
 }
 
 .object-model__cards-item {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    border: 1px solid rgba(18, 30, 42, .16);
-    max-width: 485px;
-    width: 100%;
-    border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  outline: 1px solid rgba(18, 30, 42, .16);
+  max-width: 485px;
+  width: 100%;
+  border-radius: 24px;
 }
 
 .object-model__image-block-item {
-    display: flex;
-    overflow: hidden;
+  display: flex;
+  overflow: hidden;
 }
 
 .object-model__slider {
-    width: 100%;
-}
-
-.swiper-slide  {
-    height: auto;
-    display: flex;
-}
-
-.swiper-wrapper {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    width: 100%;
-}
-
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    top: 4px;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.swiper-pagination-bullet-active {
-    background: #007bff;
-}
-
-.swiper-button-next, .swiper-button-prev {
-    color: #007bff;
+  width: 100%;
 }
 
 .object-model__main-discription-block {
-    max-width: 453px;
-    width: 100%;
-    height: 100%;
-    margin: 16px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  max-width: 453px;
+  width: 100%;
+  height: 100%;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .object__block-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 4px;
-    font-family: var(--rubik);
-    font-size: 14px;
-    flex-wrap: wrap;
-    /* overflow: scroll; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--rubik);
+  font-size: 14px;
+  flex-wrap: wrap;
+  /* overflow: scroll; */
 }
 
 .object__block-text span {
@@ -747,9 +716,90 @@ h1 {
     max-width: 484px;
     min-height: 60px;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     cursor: pointer;
     font-family: var(--rubik);
+}
+
+/* Стили для свайпера */
+.object-model__slider {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.object-model__slide {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.object-model__slide img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Стили Swiper */
+.swiper {
+  width: 100%;
+  padding: 0;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Навигация */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #007aff;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #007aff;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  top: 16px;
+}
+
+.swiper-backface-hidden .swiper-slide {
+  max-height: 328px;
 }
 
 /* ------- /Блок Объектная модель ------- */

@@ -72,54 +72,72 @@ $(document).ready(function() {
 
 //------ Блок Объектная модель
 
-// После загрузки DOM
-document.addEventListener('DOMContentLoaded', function() {
-  const objectModelSwiper = new Swiper('.object-model__slider', {
-    // autoplay: {
-    //   delay: 5000,
-    // },
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  mousewheel: true,
 
-    observer: true,
-    observeParents: true, 
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
 
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-    navigation: {
-      nextEl: '.object-model__slider .swiper-button-next',
-      prevEl: '.object-model__slider .swiper-button-prev',
-    }
-  });
-
-  objectModelSwiper();
-  const images = document.querySelectorAll('.object-model__slide img');
-  let loadedImages = 0;
-
-  images.forEach(img => {
-    if (img.complete) {
-      checkAllImagesLoaded();
-    } else {
-      img.addEventListener('load', checkAllImagesLoaded);
-    }
-  });
-
-  function checkAllImagesLoaded() {
-    loadedImages++;
-    if (loadedImages === images.length) {
-      objectModelSwiper.update(); // Обновляем Swiper
-    }
-  }
-
-  setTimeout(() => {
-    objectModelSwiper.update();
-    objectModelSwiper.slideTo(0); // Вернуться к первому слайду
-  }, 100);
 });
+
+// После загрузки DOM
+// document.addEventListener('DOMContentLoaded', function() {
+//   const objectModelSwiper = new Swiper('.object-model__slider', {
+//     // autoplay: {
+//     //   delay: 5000,
+//     // },
+//     loop: true,
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+
+//     // observer: true,
+//     // observeParents: true, 
+
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+
+//     navigation: {
+//       nextEl: '.object-model__slider .swiper-button-next',
+//       prevEl: '.object-model__slider .swiper-button-prev',
+//     }
+//   });
+
+  // const images = document.querySelectorAll('.object-model__slide');
+  // let loadedImages = 0;
+
+  // images.forEach(img => {
+  //   if (img.complete) {
+  //     checkAllImagesLoaded();
+  //   } else {
+  //     img.addEventListener('load', checkAllImagesLoaded);
+  //   }
+  // });
+
+  // function checkAllImagesLoaded() {
+  //   loadedImages++;
+  //   if (loadedImages === images.length) {
+  //     objectModelSwiper.update(); // Обновляем Swiper
+  //   }
+  // }
+
+  // setTimeout(() => {
+  //   objectModelSwiper.update();
+  //   objectModelSwiper.slideTo(0); // Вернуться к первому слайду
+  // }, 100);
+// });
 
 // ------- Блок Объектная модель
 
@@ -207,23 +225,12 @@ document.getElementById('phone').addEventListener('input', function(e) {
 // ----- Чекбокс в форме
 
 $(".check-label").on("click", function () {
-    let isChecked = $(this).find("input").prop("checked");
-    if (isChecked) {
-        $(this).find(".fakecheck").addClass("checked");
-    } else {
-        $(this).find(".fakecheck").removeClass("checked");
-    }
+  let isChecked = $(this).find("input").prop("checked");
+  if (isChecked) {
+    $(this).find(".fakecheck").addClass("checked");
+  } else {
+    $(this).find(".fakecheck").removeClass("checked");
+  }
 });
-
-// $(document).on('mouseenter', 'form input[type="submit"]', function () {
-//     var $form = $(this).closest('form');
-//     var $fakecheck = $form.find('.fakecheck');
-
-//     if ($fakecheck.hasClass('checked')) {
-//         $fakecheck.removeClass('error');
-//     } else {
-//         $fakecheck.addClass('error');
-//     }
-// });
 
 // ----- /Чекбокс в форме

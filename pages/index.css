@@ -1589,8 +1589,12 @@ textarea.questions-form__form-control {
 	}
 
   .burger-main-block {
-    position: absolute;
-    top: 95px;
+    background-color: #121E2A;
+    padding: 24px 16px;
+  }
+
+  .burger-main-block .open {
+    position: fixed;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -1598,8 +1602,6 @@ textarea.questions-form__form-control {
     width: 100%;
     height: 100%;
     min-height: 510px;
-    padding: 0 16px 16px 16px;
-    background-color: #121E2A;
   }
 
   .burger-main-block .header__block-list-burger {
@@ -1607,7 +1609,7 @@ textarea.questions-form__form-control {
     margin: 0;
     padding: 0;
     display: flex;
-    /* height: 100%; */
+    height: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -1631,6 +1633,13 @@ textarea.questions-form__form-control {
   .burger-main-block .header__block-list-burger a {
     text-decoration: none;
     color: #fff;
+  }
+
+  .burger-main-block .footer__connection-mess-block {
+    height: 100%;
+    margin: 0;
+    padding: 37px 0 24px;
+
   }
 
   .burger-main-block button  {

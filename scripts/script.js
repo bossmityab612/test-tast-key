@@ -59,19 +59,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ------ Попап окно Карточки товара
 
-const popupAddForm = document.querySelector('.card-product'); //Всплывающее окно
-const openPopupButtonAddForm = document.querySelector('.object-model__cards-button'); //Кнопка открытия попапа
-const closePopupButtonAddForm = document.querySelector('.popup-close'); //Кнопка закрытия попапа
+// const popupAddForm = document.querySelector('.card-product'); //Всплывающее окно
+// const openPopupButtonAddForm = document.querySelector('.object-model__cards-button'); //Кнопка открытия попапа
+// const closePopupButtonAddForm = document.querySelector('.popup-close'); //Кнопка закрытия попапа
 
-openPopupButtonAddForm.addEventListener('click', () => {
+// openPopupButtonAddForm.addEventListener('click', () => {
+//   popupAddForm.classList.add('popup_opened');
+// });
+
+// closePopupButtonAddForm.addEventListener('click', () => {
+//   popupAddForm.classList.remove('popup_opened');
+// });
+
+const popupAddForm = document.querySelector('.card-product');
+const openPopupButtonAddForm = document.querySelector('.object-model__cards-button');
+const closePopupButtonAddForm = document.querySelector('.popup-close');
+
+function openPopup() {
   popupAddForm.classList.add('popup_opened');
-});
+  document.addEventListener('keydown', handleEscape);
+  popupAddForm.addEventListener('click', handleOverlayClick);
+}
 
-closePopupButtonAddForm.addEventListener('click', () => {
+function closePopup() {
   popupAddForm.classList.remove('popup_opened');
-});
-// ------ //Попап окно Карточки товара
+  document.removeEventListener('keydown', handleEscape);
+  popupAddForm.removeEventListener('click', handleOverlayClick);
+}
 
+function handleEscape(evt) {
+  if (evt.key === 'Escape') {
+    closePopup();
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target === popupAddForm) {
+    closePopup();
+  }
+}
+
+
+// ------ //Попап окно Карточки товара
 
 
 // ---------- Бургер

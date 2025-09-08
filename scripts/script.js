@@ -59,46 +59,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ------ Попап окно Карточки товара
 
-// const popupAddForm = document.querySelector('.card-product'); //Всплывающее окно
-// const openPopupButtonAddForm = document.querySelector('.object-model__cards-button'); //Кнопка открытия попапа
-// const closePopupButtonAddForm = document.querySelector('.popup-close'); //Кнопка закрытия попапа
-
-// openPopupButtonAddForm.addEventListener('click', () => {
-//   popupAddForm.classList.add('popup_opened');
-// });
-
-// closePopupButtonAddForm.addEventListener('click', () => {
-//   popupAddForm.classList.remove('popup_opened');
-// });
-
-const popupAddForm = document.querySelector('.card-product');
+const popupAddForm = document.querySelector('.card-product__popup');
 const openPopupButtonAddForm = document.querySelector('.object-model__cards-button');
 const closePopupButtonAddForm = document.querySelector('.popup-close');
 
+// Функции открытия/закрытия
 function openPopup() {
-  popupAddForm.classList.add('popup_opened');
-  document.addEventListener('keydown', handleEscape);
-  popupAddForm.addEventListener('click', handleOverlayClick);
+    popupAddForm.classList.add('popup_opened');
+    document.addEventListener('keydown', handleEscape);
 }
 
 function closePopup() {
-  popupAddForm.classList.remove('popup_opened');
-  document.removeEventListener('keydown', handleEscape);
-  popupAddForm.removeEventListener('click', handleOverlayClick);
+    popupAddForm.classList.remove('popup_opened');
+    document.removeEventListener('keydown', handleEscape);
 }
 
 function handleEscape(evt) {
-  if (evt.key === 'Escape') {
-    closePopup();
-  }
+    if (evt.key === 'Escape') {
+        closePopup();
+    }
 }
 
-function handleOverlayClick(evt) {
-  if (evt.target === popupAddForm) {
-    closePopup();
-  }
-}
+// Обработчики событий
+openPopupButtonAddForm.addEventListener('click', openPopup);
+closePopupButtonAddForm.addEventListener('click', closePopup);
 
+// Закрытие по клику на оверлей
+popupAddForm.addEventListener('click', function(evt) {
+    if (evt.target === popupAddForm) {
+        closePopup();
+    }
+});
 
 // ------ //Попап окно Карточки товара
 

@@ -219,17 +219,19 @@
             </div>
           </div>
           <div class="object-model__cards-item">
-            <div class="swiper object-model__slider">
+            <div class="object-model__slider swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide object-model__slide"><img src="./images/strategy-image.jpg" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/reasons-im6.png" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/strategy-image.jpg" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/reasons-im6.png" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/strategy-image.jpg" alt="" loading="eager"></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-2.jpg" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
               </div>
-              
+              <!-- If we need pagination -->
               <div class="swiper-pagination"></div>
-              <div class="swiper-button-prev"></div> 
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>
             </div>
 
@@ -251,16 +253,18 @@
             </div>
           </div>
           <div class="object-model__cards-item">
-            <div class="swiper object-model__slider">
+            <div class="object-model__slider swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide object-model__slide"><img src="./images/strategy-image.jpg" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/reasons-im6.png" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/strategy-image.jpg" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/reasons-im6.png" alt="" loading="eager"></div>
-                <div class="swiper-slide object-model__slide"><img src="./images/strategy-image.jpg" alt="" loading="eager"></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="https://unitkey.estate/wp-content/uploads/2025/08/photo_2025-06-04_14-18-39-2.jpg" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
+                <div class="object-model__slide swiper-slide"><img src="./images/reasons-im6.png" alt=""></div>
               </div>
-              
+              <!-- If we need pagination -->
               <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>
             </div>
@@ -286,9 +290,9 @@
         <button class="object-model__button">Показать еще</button>
 
         <!-- Попап Карточки товара -->
-        <div class="card-product popup">
-          <div class="popup-content">
-            
+        <div class="card-product__popup">
+          <div class="popup__content">
+
             <div class="popup-header">
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" max-width="37" width="100%" height="26" viewBox="0 0 37 26" fill="none">
@@ -347,41 +351,19 @@
             </div>
               
             <div class="popup-body">
-              <p>КАРТОЧКА ТОВАРА</p>
-              <form class="popup-form">
-                <div class="form-group-block">
-                  <div class="form-group-block-item">
-                    <h3>Как к вам обращаться?</h3>
-                    <div class="form-group popup-field-button">
-                      <input type="text" placeholder="Имя Отчество" required>
-                    </div>
-                  </div>
-                    
-                  <div class="form-group-block-item">
-                    <h3>Как к вам обращаться?</h3>
-                    <div class="form-group popup-field-button">
-                      <input type="tel" placeholder="+7 (978) 123-12-13" required>
-                    </div>
-                  </div>
+              <div class="popup-body__block-images">
+                <img src="./images/reasons-im2.png" alt="">
+                <div class="popup-body__block-images-inner">
+                  <img src="./images/reasons-im1.png" alt="">
+                  <img src="./images/reasons-im1.png" alt="">
+                  <img src="./images/reasons-im1.png" alt="">
+                  <img src="./images/reasons-im1.png" alt="">
+                  <img src="./images/reasons-im1.png" alt="">
                 </div>
-                
-                <div class="checkbox-button">
-                  <div class="check-label">
-                    <span class="options__desc"></span>
-                    <span class="fakecheck">
-                      <input type="checkbox" name="policy" value="1" aria-invalid="false">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 17" width="19px" height="17px">
-                        <polyline fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="1.25,11.5 5.291,14.531 7.009,14.323 17.5,1.5"></polyline>
-                      </svg>
-                    </span>
-                    <label>
-                      <p><a href="/policy" target="_blank">Я согласен на обработку персональных данных</a></p>
-                    </label>
-                  </div>
-                    
-                  <button type="submit" class="submit-btn popup-field-button">Оставить заявку</button>
-                </div>
-              </form>
+              </div>
+              <div class="popup-body__description">
+                <span>TEXT</span>
+              </div>
             </div>
           </div>
         </div>

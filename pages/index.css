@@ -1313,7 +1313,7 @@ textarea.questions-form__form-control {
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .card-product__popup.popup_opened {
@@ -1397,19 +1397,124 @@ textarea.questions-form__form-control {
   border-radius: 0 24px 0 0;
 }
 
-.popup-body__description {
+.popup-body__description-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 64px;
+  justify-content: space-between;
   color: #fff;
+  font-family: var(--rubik);
   max-width: 547px;
   max-height: 547px;
   width: 100%;
   height: 100%;
-  border: 1px solid #fc6a6a;
 }
+
+.popup-body__description-block h2 {
+  font-size: 28px;
+  font-family: var(--rubik);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 102px;
+}
+
+.popup-body__description-timing {
+  border-top: 1px solid rgba(245, 229, 213, .2);
+  border-bottom: 1px solid rgba(245, 229, 213, .2);
+  padding: 16px 0;
+}
+
+.popup-body__description-item p {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  max-height: 223px;
+  height: 100%;
+  overflow: scroll;
+  mask-image: linear-gradient(to bottom, 
+    black 0%, 
+    black 70%, 
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, 
+    black 0%, 
+    black 70%, 
+    transparent 100%
+  );
+}
+
+/* ---------- Стилизация бегунка --------- */
+
+.popup-body__description-item p::-webkit-scrollbar {
+  content: ''; 
+  width: 24px; /* Ширина всего элемента навигации */
+  height: 0;
+  z-index: 1000;
+}
+
+.popup-body__description-item p::-webkit-scrollbar-track {
+  background: transparent; /* Цвет дорожки */
+}
+
+.popup-body__description-item p::-webkit-scrollbar-thumb {
+  border-radius: 50%; /* Округление бегунка */
+  border: none; /* Оформление границ бегунка */
+  background: linear-gradient(45deg, #EECFBA, #C5DDE8); /* Цвет бегунка */
+}
+
+/* ---------- Стилизация бегунка --------- */
+
+
+.popup-body__description-item h3 {
+  font-size: 28px;
+  font-family: var(--poiret-one);
+  font-weight: 100;
+  margin: 0 0 7px 0;
+  padding: 0;
+}
+
+.popup-body__description-count {
+  max-height: 73px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.popup-body__description-count-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popup-body__description-count span {
+  font-size: 20px;
+  display: block;
+}
+
+.popup-body__description-count span:last-child {
+  font-size: 28px;
+  font-family: var(--poiret-one);
+}
+
+.popup-body__description-count button {
+  max-width: 307px;
+  min-height: 64px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  color: #121E2A;
+  background: linear-gradient(152deg, #F5E5D5 0%, #6E5A41 100%);
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+} 
+
 
 /* ----------- /ПОПАП -------- */
 

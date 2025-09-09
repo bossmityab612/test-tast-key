@@ -111,49 +111,59 @@ h2 {
 }
 
 .header__block-list {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    min-height: 48px;
-    margin: 12px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  min-height: 48px;
+  gap: 100px;
+  margin: 12px 0 0 0;
+  font-family: var(--rubik);
 }
 
 .header__block-list ul {
-    display: flex;
-    max-width: 985px;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__block-list li {
-    list-style-type: none;
+  list-style-type: none;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__block-list a {
-    color: #fff;
-    font-size: 15px;
-    text-decoration: none;
-    
-    background-image: linear-gradient(to right, #ffffff, #ffffff); 
-    background-repeat: no-repeat; 
-    background-size: 0 1px; 
-    background-position: left bottom; 
-    padding-bottom: 2px; 
-    transition: all 0.3s ease 0s;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #ffffff, #ffffff); 
+  background-repeat: no-repeat; 
+  background-size: 0 1px; 
+  background-position: left bottom; 
+  padding-bottom: 2px; 
+  transition: all 0.3s ease 0s;
 }
 
 .header__block-list a:hover {
-    background-size: 100% 2px;
+  background-size: 100% 2px;
 }
 
 .header__block-list button {
-    padding: 12px 48px;
-    border-radius: 26px;
-    border: none;
-    cursor: pointer;
-    transition: all .2s ease-out;
+  max-width: 431px;
+  min-height: 48px;
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease-out;
 }
 
 .header__link-tg {
@@ -1744,8 +1754,8 @@ textarea.questions-form__form-control {
   }
   
   .header__block-list {
-    gap: 20px;
     padding-bottom: 16px;
+    margin-top: 0;
   }
   
   .object-model__cards {
@@ -2191,21 +2201,19 @@ textarea.questions-form__form-control {
   }
 
   .swiper-slide img {
-    max-width: 358px;
     max-height: 239px;
     width: 100%;
     height: 100%;
   }
 
   .swiper-backface-hidden .swiper-slide {
-    max-width: 358px;
     width: 100%;
     max-height: 239px;
     height: 100%; 
   }
 
   .object-model__main-discription-block {
-    max-width: 326px;
+    width: 100%;
     padding: 8px 16px 16px;
     margin: 0;
   }

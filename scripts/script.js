@@ -1,3 +1,6 @@
+
+
+
 // ------ Попап окно обратной связи
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -59,11 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ------ Попап окно Карточки товара
 
-const popupAddForm = document.querySelector('.card-product__popup');
+const popupAddForm = document.querySelectorAll('.card-product__popup');
 const openPopupButtonAddForm = document.querySelector('.object-model__cards-button');
-const closePopupButtonAddForm = document.querySelector('.popup-close');
+const closePopupButtonAddForm = document.querySelectorAll('.popup-close');
 
-// Функции открытия/закрытия
+Функции открытия/закрытия
 function openPopup() {
     popupAddForm.classList.add('popup_opened');
     document.addEventListener('keydown', handleEscape);
@@ -74,22 +77,32 @@ function closePopup() {
     document.removeEventListener('keydown', handleEscape);
 }
 
+// $(document).ready(function() {
+//   $(popupAddForm).click(function() {
+//     $(popupAddForm).toggleClass('popup_opened');
+//     $(openPopupButtonAddForm).slideToggle();
+//   });
+// });
+
 function handleEscape(evt) {
-    if (evt.key === 'Escape') {
-        closePopup();
-    }
+  if (evt.key === 'Escape') {
+    closePopup();
+  }
 }
 
 // Обработчики событий
 openPopupButtonAddForm.addEventListener('click', openPopup);
-closePopupButtonAddForm.addEventListener('click', closePopup);
-
-// Закрытие по клику на оверлей
-popupAddForm.addEventListener('click', function(evt) {
-    if (evt.target === popupAddForm) {
-        closePopup();
-    }
+closePopupButtonAddForm.forEach(element => {
+  element.addEventListener('click', function() {closePopup()});
 });
+
+popupAddForm.forEach(element => {
+  element.addEventListener('click', function(evt) {
+    if (evt.target === element) {
+      closePopup();
+    }
+  });
+})
 
 // ------ //Попап окно Карточки товара
 
@@ -97,14 +110,11 @@ popupAddForm.addEventListener('click', function(evt) {
 // ---------- Бургер
 
 $(document).ready(function() {
-  $(document).ready(function() {
-    $('.burger').click(function() {
-      $('.burger').toggleClass('active');
-      $('.burger-main-block').slideToggle();
-    });
+  $('.burger').click(function() {
+    $('.burger').toggleClass('active');
+    $('.burger-main-block').slideToggle();
   });
 });
-
 
 // ---------- /Бургер
 

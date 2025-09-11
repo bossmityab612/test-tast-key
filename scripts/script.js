@@ -1,199 +1,250 @@
 
 // универсальная функция для попапов
 
+// const popup = document.querySelectorAll('.popup'); //Всплывающее окно
+// const openPopupButton = document.querySelectorAll('.popup-open'); //Кнопка открытия попапа
+// const closePopupButton = document.querySelectorAll('.popup-close'); //Кнопка закрытия попапа
+
+// openPopupButton.addEventListener('click', () => {
+// 	popup.classList.add('popup_opened');
+// });
+
+// closePopupButton.addEventListener('click', () => {
+//   popup.classList.remove('popup_opened');
+// });
+
+
+
 
 // @param {Object} options - Настройки попапов
 
-function initPopups(options) {
-  // Настройки по умолчанию
-  const settings = $.extend({
-    popupClass: '.popup',          // Класс попапа
-    openButton: '.popup-open',     // Класс кнопки открытия
-    closeButton: '.popup-close',   // Класс кнопки закрытия
-    overlayClass: '.popup-overlay',// Класс оверлея
-    activeClass: 'active',         // Класс активности
-    closeOnOverlay: true,          // Закрывать по клику на оверлей
-    closeOnEsc: true,              // Закрывать по ESC
-    bodyScroll: false,             // Разрешить скролл body при открытом попапе
-    animationSpeed: 300,           // Скорость анимации
-    onOpen: null,                  // Callback при открытии
-    onClose: null                  // Callback при закрытии
-  }, options);
+// function initPopups(options) {
+//   // Настройки по умолчанию
+//   const settings = $.extend({
+//     popupClass: '.popup',          // Класс попапа
+//     openButton: '.popup-open',     // Класс кнопки открытия
+//     closeButton: '.popup-close',   // Класс кнопки закрытия
+//     overlayClass: '.popup-overlay',// Класс оверлея
+//     activeClass: 'active',         // Класс активности
+//     closeOnOverlay: true,          // Закрывать по клику на оверлей
+//     closeOnEsc: true,              // Закрывать по ESC
+//     bodyScroll: false,             // Разрешить скролл body при открытом попапе
+//     animationSpeed: 300,           // Скорость анимации
+//     onOpen: null,                  // Callback при открытии
+//     onClose: null                  // Callback при закрытии
+//   }, options);
 
-  // Открытие попапа
-  function openPopup(popupId) {
-      const $popup = $(popupId);
+//   // Открытие попапа
+//   function openPopup(popupId) {
+//       const $popup = $(popupId);
       
-      if (!$popup.length) return;
+//       if (!$popup.length) return;
       
-      // Закрываем все другие попапы
-      closeAllPopups();
+//       // Закрываем все другие попапы
+//       closeAllPopups();
       
-      // Блокируем скролл body
-      if (!settings.bodyScroll) {
-        $('body').css('overflow', 'hidden');
-      }
+//       // Блокируем скролл body
+//       if (!settings.bodyScroll) {
+//         $('body').css('overflow', 'hidden');
+//       }
       
-      // Показываем попап
-      $popup.addClass(settings.activeClass);
+//       // Показываем попап
+//       $popup.addClass(settings.activeClass);
       
-      // Показываем оверлей
-      if (settings.overlayClass) {
-        $(settings.overlayClass).addClass(settings.activeClass);
-      }
+//       // Показываем оверлей
+//       if (settings.overlayClass) {
+//         $(settings.overlayClass).addClass(settings.activeClass);
+//       }
       
-      // Вызываем callback
-      if (typeof settings.onOpen === 'function') {
-        settings.onOpen($popup);
-      }
-  }
+//       // Вызываем callback
+//       if (typeof settings.onOpen === 'function') {
+//         settings.onOpen($popup);
+//       }
+//   }
 
-  // Закрытие попапа
-  function closePopup() {
-      const $activePopup = $(settings.popupClass + '.' + settings.activeClass);
+//   // Закрытие попапа
+//   function closePopup() {
+//       const $activePopup = $(settings.popupClass + '.' + settings.activeClass);
       
-      if (!$activePopup.length) return;
+//       if (!$activePopup.length) return;
       
-      // Скрываем попап
-      $activePopup.removeClass(settings.activeClass);
+//       // Скрываем попап
+//       $activePopup.removeClass(settings.activeClass);
       
-      // Скрываем оверлей
-      if (settings.overlayClass) {
-          $(settings.overlayClass).removeClass(settings.activeClass);
-      }
+//       // Скрываем оверлей
+//       if (settings.overlayClass) {
+//           $(settings.overlayClass).removeClass(settings.activeClass);
+//       }
       
-      // Разблокируем скролл body
-      if (!settings.bodyScroll) {
-          $('body').css('overflow', '');
-      }
+//       // Разблокируем скролл body
+//       if (!settings.bodyScroll) {
+//           $('body').css('overflow', '');
+//       }
       
-      // Вызываем callback
-      if (typeof settings.onClose === 'function') {
-          settings.onClose($activePopup);
-      }
-  }
+//       // Вызываем callback
+//       if (typeof settings.onClose === 'function') {
+//           settings.onClose($activePopup);
+//       }
+//   }
 
-  // Закрытие всех попапов
-  function closeAllPopups() {
-    $(settings.popupClass).each(function() {
-      if ($(this).hasClass(settings.activeClass)) {
-        closePopup();
-      }
-    });
-  }
+//   // Закрытие всех попапов
+//   function closeAllPopups() {
+//     $(settings.popupClass).each(function() {
+//       if ($(this).hasClass(settings.activeClass)) {
+//         closePopup();
+//       }
+//     });
+//   }
 
-  // Обработчики событий
-  $(document).ready(function() {
-    // Открытие по клику на кнопку
-    $(document).on('click', settings.openButton, function(e) {
-      e.preventDefault();
-      const popupId = $(this).data('popup') || $(this).attr('href');
-      openPopup(popupId);
-    });
+//   // Обработчики событий
+//   $(document).ready(function() {
+//     // Открытие по клику на кнопку
+//     $(document).on('click', settings.openButton, function(e) {
+//       e.preventDefault();
+//       const popupId = $(this).data('popup') || $(this).attr('href');
+//       openPopup(popupId);
+//     });
 
-    // Закрытие по клику на кнопку закрытия
-    $(document).on('click', settings.closeButton, function(e) {
-      e.preventDefault();
-      closePopup();
-    });
+//     // Закрытие по клику на кнопку закрытия
+//     $(document).on('click', settings.closeButton, function(e) {
+//       e.preventDefault();
+//       closePopup();
+//     });
 
-    // Закрытие по клику на оверлей
-    if (settings.closeOnOverlay && settings.overlayClass) {
-      $(document).on('click', settings.overlayClass, function(e) {
-        if (e.target === this) {
-          closePopup();
-        }
-      });
-    }
+//     // Закрытие по клику на оверлей
+//     if (settings.closeOnOverlay && settings.overlayClass) {
+//       $(document).on('click', settings.overlayClass, function(e) {
+//         if (e.target === this) {
+//           closePopup();
+//         }
+//       });
+//     }
 
-    // Закрытие по ESC
-    if (settings.closeOnEsc) {
-      $(document).on('keydown', function(e) {
-        if (e.key === 'Escape' || e.keyCode === 27) {
-          closePopup();
-        }
-      });
-    }
-  });
+//     // Закрытие по ESC
+//     if (settings.closeOnEsc) {
+//       $(document).on('keydown', function(e) {
+//         if (e.key === 'Escape' || e.keyCode === 27) {
+//           closePopup();
+//         }
+//       });
+//     }
+//   });
 
-  // Публичные методы
-  return {
-    open: openPopup,
-    close: closePopup,
-    closeAll: closeAllPopups
-  };
-}
+//   // Публичные методы
+//   return {
+//     open: openPopup,
+//     close: closePopup,
+//     closeAll: closeAllPopups
+//   };
+// }
 
-// Инициализация попапов
-const popups = initPopups({
-  // Можно переопределить настройки по умолчанию
-  animationSpeed: 400,
-  onOpen: function($popup) {
-    console.log('Попап открыт:', $popup.attr('id'));
-  },
-  onClose: function($popup) {
-    console.log('Попап закрыт:', $popup.attr('id'));
-  }
-});
+// // Инициализация попапов
+// const popups = initPopups({
+//   // Можно переопределить настройки по умолчанию
+//   animationSpeed: 400,
+//   onOpen: function($popup) {
+//     console.log('Попап открыт:', $popup.attr('id'));
+//   },
+//   onClose: function($popup) {
+//     console.log('Попап закрыт:', $popup.attr('id'));
+//   }
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Обработка открытия попапов
+//   document.querySelectorAll('.popup-open').forEach(button => {
+//     button.addEventListener('click', function(e) {
+//       e.preventDefault();
+//       const popupId = this.dataset.popup || this.getAttribute('href');
+//       const popup = document.querySelector(popupId);
+      
+//       if (popup) {
+//         popup.classList.add('popup_opened');
+//         document.addEventListener('keydown', closeOnEscape);
+//       }
+//     });
+//   });
+
+//   // Обработка закрытия попапов
+//   document.querySelectorAll('.popup-close, .popup').forEach(element => {
+//     element.addEventListener('click', function(e) {
+//       if (this.classList.contains('popup-close') || e.target === this) {
+//         const popup = this.closest('.popup') || this;
+//         popup.classList.remove('popup_opened');
+//         document.removeEventListener('keydown', closeOnEscape);
+//       }
+//     });
+//   });
+
+//   // Закрытие по ESC
+//   function closeOnEscape(e) {
+//     if (e.key === 'Escape') {
+//       document.querySelectorAll('.popup').forEach(popup => {
+//         popup.classList.remove('popup_op  ened');
+//       });
+//       document.removeEventListener('keydown', closeOnEscape);
+//     }
+//   }
+// });
 
 // ------- /универсальная функция для попапов
 
 // ------ Попап окно обратной связи
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const popup = document.querySelector('.popup');
-//   const openBtns = document.querySelectorAll('.open-popup-btn');
-//   const closeBtn = document.querySelector('.popup-close');
-//   const form = document.querySelector('.popup-form');
+document.addEventListener('DOMContentLoaded', function() {
+  const popup = document.querySelector('.popup');
+  const openBtns = document.querySelectorAll('.open-popup-btn');
+  const closeBtn = document.querySelector('.popup-close');
+  const form = document.querySelector('.popup-form');
 
-//   // Открытие попапа для всех кнопок
-//   openBtns.forEach(btn => {
-//     btn.addEventListener('click', function() {
-//       popup.style.display = 'flex';
-//       document.body.style.overflow = 'hidden';
-//     });
-//   });
+  // Открытие попапа для всех кнопок
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
 
-//   function closePopup() {
-//     popup.style.display = 'none';
-//     document.body.style.overflow = '';
-//   }
+  function closePopup() {
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+  }
 
-//   closeBtn.addEventListener('click', closePopup);
+  closeBtn.addEventListener('click', closePopup);
 
-//   popup.addEventListener('click', function(e) {
-//     if (e.target === popup) {
-//       closePopup();
-//     }
-//   });
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
 
-//   document.addEventListener('keydown', function(e) {
-//     if (e.key === 'Escape' && popup.style.display === 'flex') {
-//       closePopup();
-//     }
-//   });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup.style.display === 'flex') {
+      closePopup();
+    }
+  });
 
-//   form.addEventListener('submit', function(e) {
-//     e.preventDefault();
-//     const inputs = form.querySelectorAll('input[required]');
-//     let isValid = true;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const inputs = form.querySelectorAll('input[required]');
+    let isValid = true;
 
-//     inputs.forEach(input => {
-//       if (!input.value.trim()) {
-//         isValid = false;
-//         input.style.borderColor = 'red';
-//       } else {
-//         input.style.borderColor = '#e0e0e0';
-//       }
-//     });
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
+        isValid = false;
+        input.style.borderColor = 'red';
+      } else {
+        input.style.borderColor = '#e0e0e0';
+      }
+    });
 
-//     if (isValid) {
-//       alert('Заявка успешно отправлена!');
-//       closePopup();
-//       form.reset();
-//     }
-//   });
-// });
+    if (isValid) {
+      alert('Заявка успешно отправлена!');
+      closePopup();
+      form.reset();
+    }
+  });
+});
 
 // ------ //Попап окно обратной связи
 

@@ -899,6 +899,7 @@ h1 {
 .questions-form {
   max-width: 485px;
   min-height: 660px;
+  padding: 16px;
   height: 100%;
   width: 100%;
   background-color: #f5e5d5;
@@ -1551,7 +1552,7 @@ textarea.questions-form__form-control {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    z-index: 999;
+    z-index: 100000;
 }
 
 
@@ -1860,7 +1861,7 @@ textarea.questions-form__form-control {
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: relative;
+    position: sticky;
   }
 
   .header__block-info {
@@ -1891,21 +1892,20 @@ textarea.questions-form__form-control {
     background-repeat: no-repeat;
     background-position: center;
 	}
-
+  
   .burger-main-block {
     background-color: #121E2A;
     padding: 24px 16px;
-  }
-
-  .burger-main-block .open {
-    position: fixed;
+    position: sticky;
+    top: 0;
     left: 0;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     min-height: 510px;
+    display: flex;
+    z-index: 10000;
   }
 
   .burger-main-block .header__block-list-burger {
@@ -2153,6 +2153,11 @@ textarea.questions-form__form-control {
     flex-direction: column;
   }
 
+  .footer__connection button {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
 	.footer__contacts-block {
 		flex-direction: column;
 	}
@@ -2164,6 +2169,14 @@ textarea.questions-form__form-control {
   
   .footer__block-navigation {
     flex-direction: column;
+  }
+
+  .footer__block-navigation-list ul {
+    max-width: 100%;
+  }
+
+  .footer__block-navigation-buttons {
+    max-width: 100%;
   }
 
   .footer__block-navigation-buttons button {

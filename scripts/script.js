@@ -65,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ------ //Попап окно обратной связи
-
+});
+document.addEventListener('DOMContentLoaded', function() {
   // ------ Попап окно Карточки товара
 
   const popupAddForm = document.querySelector('.card-product__popup');
@@ -74,22 +75,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Функции открытия/закрытия
 
-  openPopupButtonAddForm.forEach(element => {
-    element.addEventListener('click', function (){
-      openPopup();
-    });
-  })
-
-  // openPopupButtonAddForm.addEventListener('click', openPopup);
   function openPopup() {
-    popup.style.display = 'flex';
+    popupAddForm.classList.add('popup_opened');
+    document.addEventListener('keydown', handleEscape);
   }
 
+  function closePopup() {
+    popupAddForm.classList.remove('popup_opened');
+    document.addEventListener('keydown', handleEscape);
+  }
+
+  function handleEscape(evt) {
+    if (evt.key === 'Escape') {
+      closePopup();
+    }
+  }
+
+  // Обработчики союытий
+  openPopupButtonAddForm.forEach(element => {
+    element.addEventListener('click', openPopup);
+  });
+  
   closePopupButtonAddForm.forEach(element => {
-    element.addEventListener('click', function (){
-      closePopup('popup2');
-    });
+    element.addEventListener('click', closePopup);
+  });
+
+  popupAddForm.addEventListener('click', function(evt) {
+    if (evt.target === element) {
+      closePopup();
+    }
   })
+//   openPopupButtonAddForm.forEach(element => {
+//     element.addEventListener('click', function (){
+//       openPopup('popup2');
+//     });
+//   })
+
+//   // openPopupButtonAddForm.addEventListener('click', openPopup);
+//   function openPopup() {
+//     popup.style.display = 'flex';
+//   }
+
+//   closePopupButtonAddForm.forEach(element => {
+//     element.addEventListener('click', function (){
+//       closePopup('popup2');
+//     });
+//   })
 });
 
 // ---------- Бургер

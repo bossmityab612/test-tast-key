@@ -125,10 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ---------- Бургер
 
-$(document).ready(function() {
-  $('.burger').click(function() {
-    $('.burger').toggleClass('active');
-    $('.burger-main-block').slideToggle();
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.burger').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.body.classList.toggle('body--overflow');
+    document.querySelector('.burger-main-block').classList.toggle('burger-main-block--active');
   });
 });
 
@@ -199,23 +200,9 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
 });
 
 // Маска для телефона
-document.getElementById('phone').addEventListener('input', function(e) {
-  let value = e.target.value.replace(/\D/g, '');
-  
-  if (value.length > 0) {
-    value = value.match(/.{1,3}/g).join(') ');
-    value = '(' + value;
-    
-    if (value.length > 8) {
-      value = value.substring(0, 8) + '-' + value.substring(8);
-    }
-    
-    if (value.length > 11) {
-      value = value.substring(0, 11) + '-' + value.substring(11, 13);
-    }
-  }
-  
-  e.target.value = value;
+document.querySelector('#phone')?.addEventListener('input', function (e) {
+  const x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+  e.target.value = !x[1] ? '' : '(' + x[1] + ')' + (x[2] ? ' ' + x[2] : '') + (x[3] ? '-' + x[3] : '') + (x[4] ? '-' + x[4] : '');
 });
 
 // ----- Чекбокс в форме

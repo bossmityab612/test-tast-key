@@ -1329,15 +1329,11 @@ textarea.questions-form__form-control {
 .popup_opened {
   display: flex;
   border: 1px solid #000;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
 }
 
-/* .card-product__popup.popup_opened {
-  display: flex;
-} */
-
-.popup-content {
+.popup__content {
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -1542,17 +1538,10 @@ textarea.questions-form__form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* opacity: 0;
-  visibility: hidden; */
   display: none;
   transition: all 0.3s ease;
   z-index: 1000;
 }
-
-/* .popup.active {
-    opacity: 1;
-    visibility: visible;
-} */
 
 .popup-overlay {
     position: fixed;
@@ -1561,16 +1550,9 @@ textarea.questions-form__form-control {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* opacity: 0;
-    visibility: hidden; */
     transition: all 0.3s ease;
     z-index: 999;
 }
-
-/* .popup-overlay.active {
-    opacity: 1;
-    visibility: visible; 
-} */
 
 
 .popup-content {
@@ -1582,13 +1564,17 @@ textarea.questions-form__form-control {
 }
 
 .popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #AFAFAF;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ----------- /ПОПАП -------- */

@@ -1,192 +1,3 @@
-
-// универсальная функция для попапов
-
-// const popup = document.querySelectorAll('.popup'); //Всплывающее окно
-// const openPopupButton = document.querySelectorAll('.popup-open'); //Кнопка открытия попапа
-// const closePopupButton = document.querySelectorAll('.popup-close'); //Кнопка закрытия попапа
-
-// openPopupButton.addEventListener('click', () => {
-// 	popup.classList.add('popup_opened');
-// });
-
-// closePopupButton.addEventListener('click', () => {
-//   popup.classList.remove('popup_opened');
-// });
-
-
-
-
-// @param {Object} options - Настройки попапов
-
-// function initPopups(options) {
-//   // Настройки по умолчанию
-//   const settings = $.extend({
-//     popupClass: '.popup',          // Класс попапа
-//     openButton: '.popup-open',     // Класс кнопки открытия
-//     closeButton: '.popup-close',   // Класс кнопки закрытия
-//     overlayClass: '.popup-overlay',// Класс оверлея
-//     activeClass: 'active',         // Класс активности
-//     closeOnOverlay: true,          // Закрывать по клику на оверлей
-//     closeOnEsc: true,              // Закрывать по ESC
-//     bodyScroll: false,             // Разрешить скролл body при открытом попапе
-//     animationSpeed: 300,           // Скорость анимации
-//     onOpen: null,                  // Callback при открытии
-//     onClose: null                  // Callback при закрытии
-//   }, options);
-
-//   // Открытие попапа
-//   function openPopup(popupId) {
-//       const $popup = $(popupId);
-      
-//       if (!$popup.length) return;
-      
-//       // Закрываем все другие попапы
-//       closeAllPopups();
-      
-//       // Блокируем скролл body
-//       if (!settings.bodyScroll) {
-//         $('body').css('overflow', 'hidden');
-//       }
-      
-//       // Показываем попап
-//       $popup.addClass(settings.activeClass);
-      
-//       // Показываем оверлей
-//       if (settings.overlayClass) {
-//         $(settings.overlayClass).addClass(settings.activeClass);
-//       }
-      
-//       // Вызываем callback
-//       if (typeof settings.onOpen === 'function') {
-//         settings.onOpen($popup);
-//       }
-//   }
-
-//   // Закрытие попапа
-//   function closePopup() {
-//       const $activePopup = $(settings.popupClass + '.' + settings.activeClass);
-      
-//       if (!$activePopup.length) return;
-      
-//       // Скрываем попап
-//       $activePopup.removeClass(settings.activeClass);
-      
-//       // Скрываем оверлей
-//       if (settings.overlayClass) {
-//           $(settings.overlayClass).removeClass(settings.activeClass);
-//       }
-      
-//       // Разблокируем скролл body
-//       if (!settings.bodyScroll) {
-//           $('body').css('overflow', '');
-//       }
-      
-//       // Вызываем callback
-//       if (typeof settings.onClose === 'function') {
-//           settings.onClose($activePopup);
-//       }
-//   }
-
-//   // Закрытие всех попапов
-//   function closeAllPopups() {
-//     $(settings.popupClass).each(function() {
-//       if ($(this).hasClass(settings.activeClass)) {
-//         closePopup();
-//       }
-//     });
-//   }
-
-//   // Обработчики событий
-//   $(document).ready(function() {
-//     // Открытие по клику на кнопку
-//     $(document).on('click', settings.openButton, function(e) {
-//       e.preventDefault();
-//       const popupId = $(this).data('popup') || $(this).attr('href');
-//       openPopup(popupId);
-//     });
-
-//     // Закрытие по клику на кнопку закрытия
-//     $(document).on('click', settings.closeButton, function(e) {
-//       e.preventDefault();
-//       closePopup();
-//     });
-
-//     // Закрытие по клику на оверлей
-//     if (settings.closeOnOverlay && settings.overlayClass) {
-//       $(document).on('click', settings.overlayClass, function(e) {
-//         if (e.target === this) {
-//           closePopup();
-//         }
-//       });
-//     }
-
-//     // Закрытие по ESC
-//     if (settings.closeOnEsc) {
-//       $(document).on('keydown', function(e) {
-//         if (e.key === 'Escape' || e.keyCode === 27) {
-//           closePopup();
-//         }
-//       });
-//     }
-//   });
-
-//   // Публичные методы
-//   return {
-//     open: openPopup,
-//     close: closePopup,
-//     closeAll: closeAllPopups
-//   };
-// }
-
-// // Инициализация попапов
-// const popups = initPopups({
-//   // Можно переопределить настройки по умолчанию
-//   animationSpeed: 400,
-//   onOpen: function($popup) {
-//     console.log('Попап открыт:', $popup.attr('id'));
-//   },
-//   onClose: function($popup) {
-//     console.log('Попап закрыт:', $popup.attr('id'));
-//   }
-// });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Обработка открытия попапов
-//   document.querySelectorAll('.popup-open').forEach(button => {
-//     button.addEventListener('click', function(e) {
-//       e.preventDefault();
-//       const popupId = this.dataset.popup || this.getAttribute('href');
-//       const popup = document.querySelector(popupId);
-      
-//       if (popup) {
-//         popup.classList.add('popup_opened');
-//         document.addEventListener('keydown', closeOnEscape);
-//       }
-//     });
-//   });
-
-//   // Обработка закрытия попапов
-//   document.querySelectorAll('.popup-close, .popup').forEach(element => {
-//     element.addEventListener('click', function(e) {
-//       if (this.classList.contains('popup-close') || e.target === this) {
-//         const popup = this.closest('.popup') || this;
-//         popup.classList.remove('popup_opened');
-//         document.removeEventListener('keydown', closeOnEscape);
-//       }
-//     });
-//   });
-
-//   // Закрытие по ESC
-//   function closeOnEscape(e) {
-//     if (e.key === 'Escape') {
-//       document.querySelectorAll('.popup').forEach(popup => {
-//         popup.classList.remove('popup_op  ened');
-//       });
-//       document.removeEventListener('keydown', closeOnEscape);
-//     }
-//   }
-// });
-
 // ------- /универсальная функция для попапов
 
 // ------ Попап окно обратной связи
@@ -194,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const popup = document.querySelector('.popup');
   const openBtns = document.querySelectorAll('.open-popup-btn');
-  const closeBtn = document.querySelector('.popup-close');
+  const closeBtn = document.querySelectorAll('.popup-close');
   const form = document.querySelector('.popup-form');
 
   // Открытие попапа для всех кнопок
@@ -205,22 +16,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  function closePopup() {
+  function closePopup(popupId) {
+
+    const popup = document.getElementById(popupId);
     popup.style.display = 'none';
-    document.body.style.overflow = '';
+    document.body.style.overflow = 'auto';
+    
   }
 
-  closeBtn.addEventListener('click', closePopup);
+  // closeBtn.addEventListener('click', closePopup);
 
+  closeBtn.forEach((button) => {
+    button.addEventListener('click', function (){
+      closePopup('popup1');
+    });
+  })
   popup.addEventListener('click', function(e) {
     if (e.target === popup) {
-      closePopup();
+      closePopup('popup1');
     }
   });
 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && popup.style.display === 'flex') {
-      closePopup();
+      closePopup('popup1');
     }
   });
 
@@ -240,62 +59,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (isValid) {
       alert('Заявка успешно отправлена!');
-      closePopup();
+      closePopup('popup1');
       form.reset();
     }
   });
+
+  // ------ //Попап окно обратной связи
+
+  // ------ Попап окно Карточки товара
+
+  const popupAddForm = document.querySelector('.card-product__popup');
+  const openPopupButtonAddForm = document.querySelectorAll('.object-model__cards-button');
+  const closePopupButtonAddForm = document.querySelectorAll('.popup-close');
+
+  // Функции открытия/закрытия
+
+  openPopupButtonAddForm.forEach(element => {
+    element.addEventListener('click', function (){
+      openPopup();
+    });
+  })
+
+  // openPopupButtonAddForm.addEventListener('click', openPopup);
+  function openPopup() {
+    popup.style.display = 'flex';
+  }
+
+  closePopupButtonAddForm.forEach(element => {
+    element.addEventListener('click', function (){
+      closePopup('popup2');
+    });
+  })
 });
-
-// ------ //Попап окно обратной связи
-
-// ------ Попап окно Карточки товара
-
-// const popupAddForm = document.querySelectorAll('.card-product__popup');
-// const openPopupButtonAddForm = document.querySelector('.object-model__cards-button');
-// const closePopupButtonAddForm = document.querySelectorAll('.popup-close');
-
-// Функции открытия/закрытия
-// function openPopup() {
-//   popupAddForm.classList.add('popup_opened');
-//   document.addEventListener('keydown', handleEscape);
-// }
-
-// function closePopup() {
-//   popupAddForm.classList.remove('popup_opened');
-//   document.removeEventListener('keydown', handleEscape);
-// }
-
-// ----------------
-// $(document).ready(function() {
-//   $(popupAddForm).click(function() {
-//     $(popupAddForm).toggleClass('popup_opened');
-//     $(openPopupButtonAddForm).slideToggle();
-//   });
-// });
-// ---------------
-
-// function handleEscape(evt) {
-//   if (evt.key === 'Escape') {
-//     closePopup();
-//   }
-// }
-
-// // Обработчики событий
-// openPopupButtonAddForm.addEventListener('click', openPopup);
-// closePopupButtonAddForm.forEach(element => {
-//   element.addEventListener('click', function() {closePopup()});
-// });
-
-// popupAddForm.forEach(element => {
-//   element.addEventListener('click', function(evt) {
-//     if (evt.target === element) {
-//       closePopup();
-//     }
-//   });
-// })
-
-// ------ //Попап окно Карточки товара
-
 
 // ---------- Бургер
 
@@ -308,7 +103,7 @@ $(document).ready(function() {
 
 // ---------- /Бургер
 
-//------ Блок Объектная модель
+//------ Блок Объектная модель свайпер
 
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',

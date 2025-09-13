@@ -108,12 +108,14 @@ h2 {
 }
 
 .header__block-info button {
-  padding: 14px 32px;
+  padding: 0;
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
   border-radius: 18px;
   max-width: 538px;
+  min-height: 52px;
+  height: 100%;
   width: 100%;
   cursor: pointer;
   transition: all .2s ease-out;
@@ -1022,19 +1024,21 @@ textarea.questions-form__form-control {
   position: absolute;
 }
 
-.check-label {
+.form__policy {
   position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.check-label input {
-  width: 100%;
-  height: 100%;
+.form__policy input {
   display: inline-block;
   opacity: 0;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
 }
 
 .wpcf7-form-control-wrap {
@@ -1046,7 +1050,7 @@ textarea.questions-form__form-control {
   border: 1px solid #000;
 }
 
-.check-label a {
+.form__policy a {
   color: #000;
   text-decoration: none;
 }
@@ -1321,7 +1325,7 @@ textarea.questions-form__form-control {
   border: 1px solid #fff;
 }
 
-.checkbox-button .check-label a {
+.checkbox-button .form__policy a {
   color: #fff;
   font-size: 22px;
   display: block;
@@ -1348,6 +1352,7 @@ textarea.questions-form__form-control {
 }
 
 .popup__content {
+  margin: 20px;
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -1358,7 +1363,6 @@ textarea.questions-form__form-control {
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #000;
 }
 
 .card-product__popup .popup-header {
@@ -1386,6 +1390,7 @@ textarea.questions-form__form-control {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .popup-body__block-images {
@@ -1394,6 +1399,9 @@ textarea.questions-form__form-control {
   height: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+  overflow: hidden;
+  border-radius: 24px;
 }
 
 .popup-body__block-images img {
@@ -1401,7 +1409,6 @@ textarea.questions-form__form-control {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 24px 0 0 24px;
 }
 
 .popup-body__block-images-inner {
@@ -1470,32 +1477,6 @@ textarea.questions-form__form-control {
       black 70%,
       transparent 100%);
 }
-
-/* ---------- Стилизация бегунка --------- */
-
-.popup-body__description-item p::-webkit-scrollbar {
-  content: '';
-  width: 24px;
-  /* Ширина всего элемента навигации */
-  height: 0;
-  z-index: 1000;
-}
-
-.popup-body__description-item p::-webkit-scrollbar-track {
-  background: transparent;
-  /* Цвет дорожки */
-}
-
-.popup-body__description-item p::-webkit-scrollbar-thumb {
-  border-radius: 50%;
-  /* Округление бегунка */
-  border: none;
-  /* Оформление границ бегунка */
-  background: linear-gradient(45deg, #EECFBA, #C5DDE8);
-  /* Цвет бегунка */
-}
-
-/* ---------- Стилизация бегунка --------- */
 
 
 .popup-body__description-item h3 {
@@ -1568,7 +1549,7 @@ textarea.questions-form__form-control {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
-  z-index: 999;
+  z-index: 100000;
 }
 
 
@@ -1823,9 +1804,22 @@ textarea.questions-form__form-control {
     padding: 0 20px;
   }
 
+  .header__block.container {
+    padding: 20px 20px 10px 20px;
+  }
+
+  .header__block-info {
+    gap: 10px;
+  }
+
   .header__block-list {
-    padding-bottom: 16px;
-    margin-top: 0;
+    padding: 0;
+    margin: 10px 0 0 0;
+    gap: 30px;
+  }
+
+  .header__block-list a {
+    font-size: 14px;
   }
 
   .object-model__cards {
@@ -2002,6 +1996,42 @@ textarea.questions-form__form-control {
     display: none;
   }
 
+  .card-product__popup .popup-body {
+    flex-direction: column;
+    max-height: 100%;
+    gap: 8px;
+  }
+
+  .popup__content {
+    overflow: scroll;
+  }
+
+  .popup-header h2 {
+    padding: 0 0 0 8px;
+  }
+
+  .popup-body__block-images {
+    max-width: 100%;
+  }
+
+  .popup-body__block-images img {
+    min-width: 326px;
+    width: 100%;
+    min-height: 311px;
+  }
+
+  .popup-body__block-images-inner {
+    display: none;
+  }
+
+  .popup-body__description-block {
+    max-width: 100%;
+  }
+
+  .popup-body__description-count {
+    flex-direction: column;
+  }
+
   .footer__connection-mess-block li {
     display: flex;
     align-items: center;
@@ -2116,7 +2146,7 @@ textarea.questions-form__form-control {
     padding: 16px 16px 0 16px;
   }
 
-  .checkbox-button .check-label a {
+  .checkbox-button .form__policy a {
     font-size: 18px;
   }
 
@@ -2126,6 +2156,7 @@ textarea.questions-form__form-control {
 
   .popup-header h2 {
     font-size: 12px;
+    gap: 0;
   }
 
   .popup-body {
@@ -2165,7 +2196,7 @@ textarea.questions-form__form-control {
     min-height: 48px;
   }
 
-  .check-label {
+  .form__policy {
     min-height: 34px;
   }
 

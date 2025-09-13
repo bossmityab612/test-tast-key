@@ -78,11 +78,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function openPopup() {
     popupAddForm.classList.add('popup_opened');
     document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = 'hidden';
   }
 
   function closePopup() {
     popupAddForm.classList.remove('popup_opened');
     document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = '';
   }
 
   function handleEscape(evt) {
@@ -105,22 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
       closePopup();
     }
   })
-//   openPopupButtonAddForm.forEach(element => {
-//     element.addEventListener('click', function (){
-//       openPopup('popup2');
-//     });
-//   })
-
-//   // openPopupButtonAddForm.addEventListener('click', openPopup);
-//   function openPopup() {
-//     popup.style.display = 'flex';
-//   }
-
-//   closePopupButtonAddForm.forEach(element => {
-//     element.addEventListener('click', function (){
-//       closePopup('popup2');
-//     });
-//   })
 });
 
 // ---------- Бургер

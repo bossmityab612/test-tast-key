@@ -1346,7 +1346,6 @@ textarea.questions-form__form-control {
 
 .popup_opened {
   display: flex;
-  border: 1px solid #000;
   width: 100%;
   height: 100%;
 }
@@ -2004,6 +2003,8 @@ textarea.questions-form__form-control {
 
   .popup__content {
     overflow: scroll;
+    min-height: 781px;
+    height: 100%;
   }
 
   .popup-header h2 {
@@ -2011,13 +2012,34 @@ textarea.questions-form__form-control {
   }
 
   .popup-body__block-images {
-    max-width: 100%;
-  }
-
-  .popup-body__block-images img {
     min-width: 326px;
     width: 100%;
     min-height: 311px;
+  }
+
+  .popup-body__block-images img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .popup-body__description-block h2 {
+    font-size: 20px;
+    overflow: scroll;
+    max-height: 100%;
+    height: 100%;
+  }
+
+  .popup-body p {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .popup-body__description-item h3 {
+    font-size: 20px;
+  }
+
+  .popup-body__description-count span {
+    font-weight: 100;
   }
 
   .popup-body__block-images-inner {
@@ -2030,6 +2052,19 @@ textarea.questions-form__form-control {
 
   .popup-body__description-count {
     flex-direction: column;
+    padding-bottom: 20px;
+    min-height: 115px;
+    max-height: 100%;
+    gap: 0;
+  }
+
+  .popup-body__description-count span:last-child {
+    font-size: 20px;
+  }
+
+  .popup-body__description-count button {
+    max-width: 100%;
+    min-height: 48px;
   }
 
   .footer__connection-mess-block li {

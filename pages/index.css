@@ -108,7 +108,7 @@ h2 {
 }
 
 .header__block-info button {
-  padding: 0;
+  padding: 14px 32px;
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -119,6 +119,21 @@ h2 {
   width: 100%;
   cursor: pointer;
   transition: all .2s ease-out;
+  font-family: var(--rubik);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__block-info button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.header__block-info button span {
+  border: 1px solid #000;
+  display: block;
+  flex-shrink: 0;
 }
 
 .header__block-list {
@@ -175,6 +190,7 @@ h2 {
   border: none;
   cursor: pointer;
   transition: all .2s ease-out;
+  background: linear-gradient(152deg, rgba(245, 229, 213, 1) 0%, rgba(110, 90, 65, 1) 100%);
 }
 
 .header__link-tg {
@@ -417,6 +433,7 @@ h1 {
   display: flex;
   align-items: flex-end;
   border-radius: 24px;
+  font-family: var(--rubik);
 }
 
 .reasons__cards-block-item1 {
@@ -1558,17 +1575,16 @@ textarea.questions-form__form-control {
   border-radius: 8px;
   position: relative;
   z-index: 1001;
+  font-family: var(--rubik);
 }
 
 .popup-close {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #AFAFAF;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  border: 1px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1773,11 +1789,13 @@ textarea.questions-form__form-control {
   color: #fff;
   margin-top: 28px;
   align-self: flex-end;
+  font-family: var(--rubik);
 }
 
 .footer__block-navigation-list a {
   text-decoration: none;
   color: #F5E5D5;
+  font-family: var(--rubik);
 }
 
 .footer__bottom {
@@ -1837,15 +1855,23 @@ textarea.questions-form__form-control {
 
 @media screen and (max-width: 1220px) {
   .header__block-logo-slogan p {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .header__block-info button {
     max-width: 370px;
   }
 
+  .intro .container {
+    min-height: 600px;
+  }
+
   .intro__header-block {
     max-width: 970px;
+  }
+
+  .strategy {
+    min-height: 645px;
   }
 
   .strategy__block-stages {
@@ -2003,7 +2029,7 @@ textarea.questions-form__form-control {
 
   .popup__content {
     overflow: scroll;
-    min-height: 781px;
+    max-height: 781px;
     height: 100%;
   }
 
@@ -2095,7 +2121,7 @@ textarea.questions-form__form-control {
 @media screen and (max-width: 768px) {
 
   h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .header__block-logo-slogan img {
@@ -2159,6 +2185,7 @@ textarea.questions-form__form-control {
       "reasons__cards-block-item2 reasons__cards-block-item3"
       "reasons__cards-block-item4 reasons__cards-block-item5"
       "reasons__cards-block-item4 reasons__cards-block-item6";
+      gap: 16px;
   }
 
   .questions__block-list-form {
@@ -2275,6 +2302,8 @@ textarea.questions-form__form-control {
     background: rgba(245, 229, 213, .1);
     backdrop-filter: blur(16px);
     font-family: var(--rubik);
+    font-size: 14px;
+    min-height: 48px;
   }
 }
 
@@ -2349,6 +2378,7 @@ textarea.questions-form__form-control {
 
   .strategy__block-stages-text-btn ul {
     margin: 0;
+    min-height: 239px;
   }
 
   .strategy__block-stages img {
@@ -2477,5 +2507,6 @@ textarea.questions-form__form-control {
   .footer__bottom {
     flex-direction: column;
     padding-bottom: 32px;
+    font-size: 14px;
   }
 }

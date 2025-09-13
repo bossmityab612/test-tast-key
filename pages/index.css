@@ -98,17 +98,20 @@ h2 {
 }
 
 .header__block-logo-slogan p {
-  max-width: 308px;
-  width: 100%;
   padding-left: 16px;
   font-size: 18px;
   border-left: 1px solid #fff;
   color: #fff;
   font-family: var(--rubik);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  width: 100%;
+  max-width: 220px;
 }
 
 .header__block-info button {
-  padding: 14px 32px;
+  /* padding: 14px 32px; */
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -131,7 +134,6 @@ h2 {
 }
 
 .header__block-info button span {
-  border: 1px solid #000;
   display: block;
   flex-shrink: 0;
 }
@@ -379,6 +381,7 @@ h1 {
   max-width: 308px;
   width: 100%;
   text-align: center;
+  font-family: var(--rubik);
 }
 
 .intro__target-audience-list.mobile {
@@ -1170,6 +1173,12 @@ textarea.questions-form__form-control {
   width: clamp(424px * var(--coefficient), 424 * 100vw / var(--design-width) * var(--mobile-coefficient), 424px * var(--mobile-coefficient));
 }
 
+.popup-overlay .popup-body p:last-child {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
 .popup-header {
   color: white;
   padding: 25px;
@@ -1851,6 +1860,10 @@ textarea.questions-form__form-control {
     gap: 20px;
     align-items: center;
   }
+
+  .intro__target-audience-list li {
+    padding: 16px 8px 0;
+  }
 }
 
 @media screen and (max-width: 1220px) {
@@ -1859,7 +1872,7 @@ textarea.questions-form__form-control {
   }
 
   .header__block-info button {
-    max-width: 370px;
+    max-width: 390px;
   }
 
   .intro .container {
@@ -1879,6 +1892,10 @@ textarea.questions-form__form-control {
     flex-direction: column;
     gap: 24px;
     align-items: center;
+  }
+
+  .reasons__cards-block {
+    gap: 16px;
   }
 
   .object-model__cards {
@@ -2124,6 +2141,10 @@ textarea.questions-form__form-control {
     font-size: 26px;
   }
 
+  .strategy h2 {
+    padding: 32px 0 0 0;
+  }
+
   .header__block-logo-slogan img {
     max-width: 36px;
     min-height: 24px;
@@ -2174,6 +2195,19 @@ textarea.questions-form__form-control {
     display: none;
   }
 
+  .strategy__block-stages {
+    padding: 24px 0;
+  }
+
+  .strategy__block-stages-text-btn ul {
+    margin: 0;
+  }
+
+  .strategy__block-stages-text-btn {
+    min-height: 239px;
+  }
+
+
   .object-model__cards-item {
     min-height: 577px;
     height: 100%;
@@ -2185,7 +2219,10 @@ textarea.questions-form__form-control {
       "reasons__cards-block-item2 reasons__cards-block-item3"
       "reasons__cards-block-item4 reasons__cards-block-item5"
       "reasons__cards-block-item4 reasons__cards-block-item6";
-      gap: 16px;
+  }
+
+  .reasons button {
+    display: none;
   }
 
   .questions__block-list-form {
@@ -2229,6 +2266,10 @@ textarea.questions-form__form-control {
 
   .popup-body p:first-child {
     font-size: 20px;
+  }
+
+  .popup-overlay .popup-body {
+    padding: 16px;
   }
 
   .popup-close {
